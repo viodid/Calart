@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from cs50 import SQL
+from helpers import hash, check_password_hash
 
 app = Flask(__name__)
 
@@ -10,11 +11,6 @@ db = SQL("sqlite:///calart.db")
 @app.route("/")
 def index():
     return render_template("index.html")
-
-
-@app.route("/social")
-def social():
-    return render_template("social.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -35,14 +31,16 @@ def login():
 
         # Query database for username
         rows = db.execute(
-            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+            "SELECT * FROM users WHERE email = ?", request.form.get("email")
         )
 
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(
             rows[0]["hash"], request.form.get("password")
         ):
-            return apology("invalid username and/or password", 403)
+            return render_template(
+                "apology.html", top=403, bottom="correo y/o contraseña inválidos"
+            )
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
@@ -53,3 +51,8 @@ def login():
         return redirect("/")
 
     return render_template("login.html")
+
+
+@app.route("/social")
+def social():
+    return render_template("social.html")
