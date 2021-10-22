@@ -12,18 +12,22 @@ html {
 body {
     background-color: #fefefb;
     touch-action: manipulation;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-* li {
-  /*list-style: none;*/
-}
+/* li {
+  list-style: none;
+} */
 
 * a:hover {
     text-decoration: none;
 }
 
 .navbar-logo {
-    height: 20%;
+    min-height: 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -34,7 +38,6 @@ body {
 
 .logo {
     width: 80%;
-    height: 100%;
 }
 
 .logo img {
@@ -50,6 +53,7 @@ body {
 
 .sidebar {
     display: none;
+    margin-top: 100px;
     width: 80%;
     position: absolute;
     right: 0;
@@ -169,6 +173,7 @@ body {
 footer {
     border-top: 0.5px solid #333;
     background-color: #efefef;
+    margin-bottom: 0;
 }
 
 .colabs {
