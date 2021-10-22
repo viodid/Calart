@@ -26,7 +26,7 @@ def hash(password):
     return "".join(hash_plain)
 
 
-def check_password_hash(hash, password):
-    if hash(password) == hash:
+def check_password_hash(hash_db, password):
+    if hash(password) == hash_db:
         return True
     return False

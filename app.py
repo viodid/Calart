@@ -3,7 +3,7 @@ from cs50 import SQL
 from helpers import hash, check_password_hash
 
 app = Flask(__name__)
-# app.config.from_pyfile("configuration.py")
+app.config.from_pyfile("configuration.py")
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calart.db")
@@ -16,6 +16,9 @@ def index():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    # Forget any user_id
+    session.clear()
+
     if request.method == "POST":
 
         # Ensure username was submitted
@@ -50,8 +53,6 @@ def login():
         # Provide a username in the session
         session["username"] = rows[0]["username"]
 
-        print(session)
-
         # Redirect user to home page
         return redirect("/")
 
@@ -61,7 +62,59 @@ def login():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        pass
+        username = request.form.get("username")
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        # Ensure emai was submitted
+        if not email:
+            return render_template(
+                "apology.html", top=403, bottom="Debes_añadir_tu_email"
+            )
+
+        # Ensure username was submitted
+        elif not username:
+            return render_template(
+                "apology.html", top=403, bottom="Debes_añadir_tu_usuario"
+            )
+
+        # Ensure password was submitted
+        elif not password:
+            return render_template(
+                "apology.html", top=403, bottom="Debes_añadir_tu_contraseña"
+            )
+
+        # Query database for email
+        email_db = db.execute("SELECT email FROM users WHERE email = ?", email)
+
+        # Ensure email do not exists
+        if len(email_db) != 0:
+            return render_template(
+                "apology.html", top=403, bottom="Este email ya está registrado"
+            )
+
+        # Query database for username
+        username_db = db.execute(
+            "SELECT username FROM users WHERE username = ?", username
+        )
+
+        # Ensure username do not exists
+        if len(username_db) != 0:
+            return render_template(
+                "apology.html", top=403, bottom="Este usuario ya está registrado"
+            )
+
+        db.execute(
+            "INSERT INTO users(email, hash, username) VALUES(?, ?, ?)",
+            email,
+            hash(password),
+            username,
+        )
+        rows = db.execute("SELECT * FROM users WHERE email = ?", email)
+        session["user_id"] = rows[0]["id"]
+        session["username"] = rows[0]["username"]
+        # Redirect user to home page
+        return redirect("/")
 
     return render_template("register.html")
 

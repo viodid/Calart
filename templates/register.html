@@ -3,7 +3,7 @@
 
 {% block classbody %}orange-bkgd{% endblock %}
 {% block main %}
-<form class="intro content" method="post" action="/login">
+<form class="intro content" method="post" action="/register">
     <h1 class="center-text" style="color: #fff;">Registrarse<span style="color: #fff">.</span></h1>
     <div class="login-container">
         <div class="login">
@@ -14,8 +14,7 @@
                 oninvalid="this.setCustomValidity('Por favor escriba su usuario.')" oninput="this.setCustomValidity('')"
                 required>
             <input name="password" class="password-login" placeholder="Escriba su contraseña" autocomplete="off"
-                type="password" oninvalid="this.setCustomValidity('Por favor escriba su contraseña')"
-                oninput="this.setCustomValidity('')" required>
+                type="password" required minlength="4" maxlength="20">
         </div>
     </div>
     <div class="button-login-container">
