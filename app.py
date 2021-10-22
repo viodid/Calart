@@ -3,7 +3,7 @@ from cs50 import SQL
 from helpers import hash, check_password_hash
 
 app = Flask(__name__)
-app.config.from_pyfile("configuration.py")
+# app.config.from_pyfile("configuration.py")
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calart.db")
@@ -56,6 +56,14 @@ def login():
         return redirect("/")
 
     return render_template("login.html")
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        pass
+
+    return render_template("register.html")
 
 
 @app.route("/social")

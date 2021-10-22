@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Registrarse{% endblock %}
+
+{% block classbody %}orange-bkgd{% endblock %}
+{% block main %}
+<form class="intro content" method="post" action="/login">
+    <h1 class="center-text" style="color: #fff;">Registrarse<span style="color: #fff">.</span></h1>
+    <div class="login-container">
+        <div class="login">
+            <input name="email" class="text-login" placeholder="Correo electrónico" type="email" autocomplete="off"
+                oninvalid="this.setCustomValidity('Por favor escriba su correo.')" oninput="this.setCustomValidity('')"
+                required>
+            <input name="username" class="text-login" placeholder="Nombre de usuario" type="text" autocomplete="off"
+                oninvalid="this.setCustomValidity('Por favor escriba su usuario.')" oninput="this.setCustomValidity('')"
+                required>
+            <input name="password" class="password-login" placeholder="Escriba su contraseña" autocomplete="off"
+                type="password" oninvalid="this.setCustomValidity('Por favor escriba su contraseña')"
+                oninput="this.setCustomValidity('')" required>
+        </div>
+    </div>
+    <div class="button-login-container">
+        <button class="button register" type="submit">Registrarse</button>
+    </div>
+</form>
+{% endblock %}
