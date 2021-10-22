@@ -5,17 +5,21 @@ Log In
 {% endblock %}
 
 {% block main %}
-<div class="intro content">
+<form class="intro content" method="post" action="/login">
   <h1 class="center-text">Iniciar Sesión<span class="period">.</span></h1>
   <div class="login-container">
     <div class="login">
-      <input name="username" class="text-login" placeholder="Escriba su correo" type="text" required>
-      <input name="password" class="password-login" placeholder="Escriba su contraseña" required autocomplete="off"
-        type="password">
+      <input name="username" class="text-login" placeholder="Escriba su correo" type="text" autocomplete="off"
+        oninvalid="this.setCustomValidity('Por favor escriba su correo.')" oninput="this.setCustomValidity('')">
+      <input name="password" class="password-login" placeholder="Escriba su contraseña" autocomplete="off"
+        type="password" oninvalid="this.setCustomValidity('Por favor escriba su contraseña')"
+        oninput="this.setCustomValidity('')">
     </div>
   </div>
-  <form action="/login" method="post" class="button-login-container">
-    <input class="login-button" type="submit" value="Iniciar Sesión">
-  </form>
-</div>
+  <div class="button-login-container">
+    <button class="button" type="submit">Iniciar Sesión</button>
+    <button type="button" class="button register"><a href="/register">Registrarse</a></button>
+  </div>
+</form>
+
 {% endblock %}
