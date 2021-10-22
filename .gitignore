@@ -38,7 +38,3 @@ Thumbs.db
 # bytecode compiled #
 ######################
 /__pycache__
-
-# determined files#
-######################
-helpers.py

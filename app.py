@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, session
 from cs50 import SQL
 from helpers import hash, check_password_hash
 
 app = Flask(__name__)
+app.config.from_pyfile("configuration.py")
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calart.db")
@@ -18,20 +19,22 @@ def login():
     if request.method == "POST":
 
         # Ensure username was submitted
-        if not request.form.get("username"):
+        if not request.form.get("email/username"):
             return render_template(
-                "apology.html", top=403, bottom="Debes añadir tu correo"
+                "apology.html", top=403, bottom="Debes_añadir_tu_correo"
             )
 
         # Ensure password was submitted
         elif not request.form.get("password"):
             return render_template(
-                "apology.html", top=403, bottom="Debes añadir tu contraseña"
+                "apology.html", top=403, bottom="Debes_añadir_tu_contraseña"
             )
 
         # Query database for username
         rows = db.execute(
-            "SELECT * FROM users WHERE email = ?", request.form.get("email")
+            "SELECT * FROM users WHERE email = ? OR username = ?",
+            request.form.get("email/username"),
+            request.form.get("email/username"),
         )
 
         # Ensure username exists and password is correct
@@ -39,13 +42,15 @@ def login():
             rows[0]["hash"], request.form.get("password")
         ):
             return render_template(
-                "apology.html", top=403, bottom="correo y/o contraseña inválidos"
+                "apology.html", top=403, bottom="correo_y~so_contraseña_inválidos"
             )
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
         # Provide a username in the session
         session["username"] = rows[0]["username"]
+
+        print(session)
 
         # Redirect user to home page
         return redirect("/")
