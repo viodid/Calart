@@ -119,6 +119,11 @@ def register():
     return render_template("register.html")
 
 
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    return render_template("profile.html")
+
+
 @app.route("/social")
 def social():
     return render_template("social.html")

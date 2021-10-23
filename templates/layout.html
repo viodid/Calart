@@ -46,8 +46,12 @@
                         src="https://icongr.am/material/cards-heart.svg?size=25&color=333333" alt="" /></a></li>
         </ul>
         <ul class="sidebar-log-contact">
+            {% if session.username %}
+            <li><a href="/profile"><span>{{ session.username|upper }}</span></a></li>
+            {% else %}
             <li><a href="/login"><span>Iniciar Sesión</span><img
                         src="https://icongr.am/material/arrow-left-bold-box.svg?size=25&color=333333" alt="" /></a></li>
+            {% endif %}
             <li id="social-buttons"><a href="https://www.instagram.com/calat33/" class="instagram" target="_blank"><img
                         src="static/images/instagram.png" width="32" alt="" /></a><a
                     href="https://www.facebook.com/CALAT-33-169199418110806" class="facebook" target="_blank"><img

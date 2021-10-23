@@ -112,7 +112,7 @@ body {
 }
 
 .sidebar span {
-    font-weight: bold;
+    font-weight: 500;
     margin-right: 0.5rem;
 }
 
@@ -231,18 +231,27 @@ h2 {
 }
 
 
-.login input {
+.form-input{
     width: 80%;
     border: none;
     border-bottom: 2px solid #ee8d11;
     margin: 1.5rem 0;
     border-radius: 0px;
-
+    display: flex;
 }
 
-.login input:focus {
+.form-input:focus {
     outline: none;
     border-bottom: 2px solid #1f759c;
+}
+
+.form-input input {
+    flex-grow: 2;
+    border: none;
+}
+
+.toggle-password {
+    margin-left: -21px;
 }
 
 
