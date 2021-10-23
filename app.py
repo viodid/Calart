@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 from cs50 import SQL
-from helpers import hash, check_password_hash
+from helpers import hash, checkPasswordhash, loginRequired
 
 app = Flask(__name__)
 app.config.from_pyfile("configuration.py")
@@ -41,7 +41,7 @@ def login():
         )
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(
+        if len(rows) != 1 or not checkPasswordhash(
             rows[0]["hash"], request.form.get("password")
         ):
             return render_template(
@@ -120,6 +120,7 @@ def register():
 
 
 @app.route("/profile", methods=["GET", "POST"])
+@loginRequired
 def profile():
     return render_template("profile.html")
 

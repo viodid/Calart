@@ -1,3 +1,7 @@
+from functools import wraps
+from flask import redirect, session
+
+
 def hash(password):
     # discard repeated values
     password = set(password)
@@ -26,7 +30,17 @@ def hash(password):
     return "".join(hash_plain)
 
 
-def check_password_hash(hash_db, password):
+def checkPasswordhash(hash_db, password):
     if hash(password) == hash_db:
         return True
     return False
+
+
+def loginRequired(f):
+    @wraps(f)
+    def wrapper(*args, **kwds):
+        if session.get("username") is None:
+            return redirect("/login")
+        return f(*args, **kwds)
+
+    return wrapper
