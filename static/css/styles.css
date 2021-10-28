@@ -311,6 +311,19 @@ input[type="password"]::placeholder {
     text-align: center;
 }
 
+/* PROFILE STYLES */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    width: 100%;
+}
+
+.card {
+    border: 1px solid #000;
+}
+
+
 @media screen and (min-width: 480px) {
     .logo {
         width: 30%;
