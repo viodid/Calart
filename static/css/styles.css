@@ -3,6 +3,7 @@
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
     color: #222;
+    line-height: 1.75;
 }
 
 html {
@@ -165,11 +166,11 @@ body {
 }
 
 .intro h1 {
-    margin-top: 3rem;
+    margin-top: 1rem;
     font-size: 3.5rem;
     font-weight: 700;
     letter-spacing: 0.25rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .period {
@@ -248,6 +249,17 @@ h2 {
 .form-input input {
     flex-grow: 2;
     border: none;
+}
+
+input[type="password"] {
+    font-family: Verdana;
+  }
+
+input[type="password"]::placeholder {
+    font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+    letter-spacing: initial;
 }
 
 .toggle-password {

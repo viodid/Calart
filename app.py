@@ -3,7 +3,8 @@ from cs50 import SQL
 from helpers import hash, checkPasswordhash, loginRequired
 
 app = Flask(__name__)
-app.config.from_pyfile("configuration.py")
+app.config.from_pyfile("config.py")
+
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calart.db")
@@ -128,3 +129,7 @@ def profile():
 @app.route("/social")
 def social():
     return render_template("social.html")
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

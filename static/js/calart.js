@@ -9,10 +9,12 @@ function listen() {
             displayNavbar();
         });
 
-    document.querySelector(".toggle-password")
-        .addEventListener("click", function () {
-            togglePassword();
-        });
+    if (document.querySelector(".toggle-password") != null) {
+        document.querySelector(".toggle-password")
+            .addEventListener("click", function () {
+                togglePassword();
+            });
+    }
 }
 
 function displayNavbar() {
