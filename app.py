@@ -25,13 +25,13 @@ def login():
         # Ensure username was submitted
         if not request.form.get("email/username"):
             return render_template(
-                "apology.html", top=403, bottom="Debes_añadir_tu_correo"
+                "apology.html", top=400, bottom="Debes_añadir_tu_correo"
             )
 
         # Ensure password was submitted
         elif not request.form.get("password"):
             return render_template(
-                "apology.html", top=403, bottom="Debes_añadir_tu_contraseña"
+                "apology.html", top=400, bottom="Debes_añadir_tu_contraseña"
             )
 
         # Query database for username
@@ -46,7 +46,7 @@ def login():
             rows[0]["hash"], request.form.get("password")
         ):
             return render_template(
-                "apology.html", top=403, bottom="correo_y~so_contraseña_inválidos"
+                "apology.html", top=400, bottom="correo_y~so_contraseña_inválidos"
             )
 
         # Remember which user has logged in
@@ -70,19 +70,19 @@ def register():
         # Ensure emai was submitted
         if not email:
             return render_template(
-                "apology.html", top=403, bottom="Debes_añadir_tu_email"
+                "apology.html", top=400, bottom="Debes_añadir_tu_email"
             )
 
         # Ensure username was submitted
         elif not username:
             return render_template(
-                "apology.html", top=403, bottom="Debes_añadir_tu_usuario"
+                "apology.html", top=400, bottom="Debes_añadir_tu_usuario"
             )
 
         # Ensure password was submitted
         elif not password:
             return render_template(
-                "apology.html", top=403, bottom="Debes_añadir_tu_contraseña"
+                "apology.html", top=400, bottom="Debes_añadir_tu_contraseña"
             )
 
         # Query database for email
@@ -91,7 +91,7 @@ def register():
         # Ensure email do not exists
         if len(email_db) != 0:
             return render_template(
-                "apology.html", top=403, bottom="Este email ya está registrado"
+                "apology.html", top=400, bottom="Este email ya está registrado"
             )
 
         # Query database for username
@@ -102,7 +102,7 @@ def register():
         # Ensure username do not exists
         if len(username_db) != 0:
             return render_template(
-                "apology.html", top=403, bottom="Este usuario ya está registrado"
+                "apology.html", top=400, bottom="Este usuario ya está registrado"
             )
 
         db.execute(
@@ -123,6 +123,9 @@ def register():
 @app.route("/profile", methods=["GET", "POST"])
 @loginRequired
 def profile():
+    if request.method == "POST":
+        pass
+
     return render_template("profile.html")
 
 

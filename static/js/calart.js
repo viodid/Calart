@@ -1,5 +1,5 @@
 let degrees = 180;
-displaySideBar = false;
+let displaySideBar = false;
 
 function listen() {
     document.querySelector(".button-nav")
@@ -21,10 +21,20 @@ function displayNavbar() {
     if (!displaySideBar) {
         document.querySelector(".sidebar").classList.add("show");
         displaySideBar = true;
+        removeNavbar();
     } else {
         document.querySelector(".sidebar").classList.remove("show");
         displaySideBar = false;
     }
+}
+
+function removeNavbar() {
+    document.querySelector("body > div:not(.sidebar)")
+        .addEventListener("click", function () {
+            displaySideBar = true;
+            displayNavbar();
+        });
+
 }
 
 function togglePassword() {
