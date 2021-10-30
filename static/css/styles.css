@@ -3,6 +3,7 @@
   --first: #ee8d11;
   --second: #ffdcaf;
   --third: #fff0dd;
+  --gradient: #0095d5;
 }
 
 * {
@@ -276,6 +277,14 @@ input[type=password]::placeholder {
 .button:active {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.16), 0 1px 1px rgba(0, 0, 0, 0.23);
   background-color: #d37c0c;
+}
+
+.gradient-bkgd {
+  background-image: linear-gradient(180deg, var(--first), var(--third));
+}
+
+.none-bkgd {
+  background-image: none;
 }
 
 .show {
