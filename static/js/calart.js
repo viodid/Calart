@@ -1,5 +1,6 @@
 let degrees = 180;
 let displaySideBar = false;
+let toggleThemeButton = false;
 
 function listen() {
     document.querySelector(".button-nav")
@@ -14,6 +15,12 @@ function listen() {
             .addEventListener("click", function () {
                 togglePassword();
             });
+    }
+
+    if (document.querySelector(".palette") != null) {
+        document.getElementById("default").addEventListener("click", function () { console.log("default"); });
+        document.getElementById("blue").addEventListener("click", function () { console.log("blue"); });
+        document.getElementById("dark").addEventListener("click", function () { console.log("dark"); });
     }
 }
 
@@ -49,5 +56,18 @@ function togglePassword() {
         input.setAttribute("type", "password");
     }
 }
+
+function toggleTheme(event) {
+    console.log(event);
+    if (toggleThemeButton) {
+        //console.log("no");
+        toggleThemeButton = false;
+    } else {
+        //console.log("yes");
+        toggleThemeButton = true;
+    }
+
+}
+
 
 document.addEventListener("DOMContentLoaded", listen);
