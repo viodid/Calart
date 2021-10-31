@@ -53,6 +53,8 @@ def login():
         session["user_id"] = rows[0]["id"]
         # Provide a username in the session
         session["username"] = rows[0]["username"]
+        # Select default theme from db
+        session["theme"] = rows[0]["theme"]
 
         # Redirect user to home page
         return redirect("/")
@@ -124,7 +126,13 @@ def register():
 @loginRequired
 def profile():
     if request.method == "POST":
-        pass
+        theme = request.form.get("theme")
+        session["theme"] = theme
+        db.execute(
+            "UPDATE users SET theme = ? WHERE username = ?", theme, session["username"]
+        )
+
+    print(session["theme"])
 
     return render_template("profile.html")
 

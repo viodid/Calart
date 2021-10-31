@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 {% block main %}
 
-<h3>Choose your favourite palette<span class="period">.</span></h3>
-<div class="palette-container">
+<h3>Elige tu tema favorito<span class="period">.</span></h3>
+<form method="post" action="/profile" class="palette-container">
+    <input type="hidden" name="theme" value="" id="theme" />
     <div class="label-palette">
-        <button type="button" id="default" class="btn btn-warning btn-lg btn-block">Tema Arena</button>
+        <button type="submit" id="default" class="btn btn-warning btn-lg btn-block">Tema Arena</button>
     </div>
     <div class="palette">
         <div class="color-palette text1"></div>
@@ -13,7 +14,7 @@
         <div class="color-palette third1"></div>
     </div>
     <div class="label-palette">
-        <button type="button" id="blue" class="btn btn-info btn-lg btn-block">Tema Agua</button>
+        <button type="submit" id="blue" class="btn btn-info btn-lg btn-block">Tema Agua</button>
     </div>
     <div class="palette">
         <div class="color-palette text2"></div>
@@ -22,7 +23,7 @@
         <div class="color-palette third2"></div>
     </div>
     <div class="label-palette">
-        <button type="button" id="dark" class="btn btn-secondary btn-lg btn-block">Tema Oscuro</button>
+        <button type="submit" id="dark" class="btn btn-secondary btn-lg btn-block">Tema Oscuro</button>
     </div>
     <div class="palette">
         <div class="color-palette text3"></div>
@@ -30,7 +31,7 @@
         <div class="color-palette second3"></div>
         <div class="color-palette third3"></div>
     </div>
-</div>
+</form>
 
 <button><a href="/login">Salir de la sesión.</a></button>
 {% endblock %}

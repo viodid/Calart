@@ -1,6 +1,8 @@
 let degrees = 180;
 let displaySideBar = false;
-let toggleThemeButton = false;
+const properties = ["--text", "--first", "--second", "--third", "--gradient"];
+const values = [["#222", "#ee8d11", "#ffdcaf", "#fff0dd", "#0095d5"],
+["#222", "#1772b9", "#4db5e2", "#99d4ee", "#ee8d11"], ["#fefefb", "#b1b1b1", "#222", "#444546", "#6c317a"]];
 
 function listen() {
     document.querySelector(".button-nav")
@@ -18,9 +20,9 @@ function listen() {
     }
 
     if (document.querySelector(".palette") != null) {
-        document.getElementById("default").addEventListener("click", function () { console.log("default"); });
-        document.getElementById("blue").addEventListener("click", function () { console.log("blue"); });
-        document.getElementById("dark").addEventListener("click", function () { console.log("dark"); });
+        document.getElementById("default").addEventListener("click", function (event) { toggleValue(event); });
+        document.getElementById("blue").addEventListener("click", function (event) { toggleValue(event); });
+        document.getElementById("dark").addEventListener("click", function (event) { toggleValue(event); });
     }
 }
 
@@ -58,16 +60,29 @@ function togglePassword() {
 }
 
 function toggleTheme(event) {
-    console.log(event);
-    if (toggleThemeButton) {
-        //console.log("no");
-        toggleThemeButton = false;
-    } else {
-        //console.log("yes");
-        toggleThemeButton = true;
+    let identifier = event.target.id;
+    let css = document.styleSheets[1].cssRules[0].style;
+    for (let i = 0; i < 5; i++) {
+        if (identifier === "default") {
+            css.setProperty(properties[i], values[0][i]);
+        } else if (identifier === "blue") {
+            css.setProperty(properties[i], values[1][i]);
+        } else {
+            css.setProperty(properties[i], values[2][i]);
+        }
     }
-
 }
 
+function toggleValue(event) {
+    let identifier = event.target.id;
+    let value = document.getElementById("theme")
+    if (identifier === "default") {
+        value.setAttribute("value", "default");
+    } else if (identifier === "blue") {
+        value.setAttribute("value", "blue_palette");
+    } else {
+        value.setAttribute("value", "dark_palette");
+    }
+}
 
 document.addEventListener("DOMContentLoaded", listen);

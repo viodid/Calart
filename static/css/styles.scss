@@ -19,12 +19,28 @@ $dark_palette: (
     "third3": #222,
 );
 
-:root {
+:root, .default{
     --text: #222;
     --first: #ee8d11;
     --second: #ffdcaf;
     --third: #fff0dd;
     --gradient: #0095d5;
+}
+
+.blue_palette {
+    --text: #222;
+    --first: #1772b9; 
+    --second: #4db5e2; 
+    --third: #99d4ee;
+    --gradient: #ee8d11;
+}
+
+.dark_palette {
+    --text: #fefefb;
+    --first: #b1b1b1; 
+    --second: #222;
+    --third: #444546;
+    --gradient: #6c317a;
 }
 
 * {
@@ -351,6 +367,14 @@ label {
 
 .label-palette {
     margin-bottom: 0.4rem;
+}
+
+.btn-block {
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 40px;
 }
 
 @each $name, $color in $default_palette {

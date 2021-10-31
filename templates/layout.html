@@ -27,48 +27,54 @@
     <title>Calart: {% block title %}{% endblock %}</title>
     <link rel="icon" type="image/png" href="static/images/favicon_calart.png" />
 </head>
-<body class="{% block classbody %}{% endblock %}">
-    <nav class="navbar-logo">
-        <a class="logo" href="/">
-            <img src="static/images/logo_calart.png" alt="" />
-        </a>
-        <img src="static/images/favicon_calart.png" width="38" class="button-nav" alt="display navbar" />
-    </nav>
-    <div class="sidebar">
-        <ul class="sidebar-navigation">
-            <li><a href="/"><span>Inicio</span><img src="https://icongr.am/material/home.svg?size=25&color=333333"
-                        alt="home icon" /></a></li>
-            <li><a href="#"><span>Productos</span><img
-                        src="https://icongr.am/material/book-open-variant.svg?size=25&color=333333" alt="" /></a></li>
-            <li><a href="#"><span>Servicios</span><img
-                        src="https://icongr.am/material/earth-box.svg?size=25&color=333333" alt="" /></a></li>
-            <li><a href="/social"><span>Social-Medio Ambiente</span><img
-                        src="https://icongr.am/material/cards-heart.svg?size=25&color=333333" alt="" /></a></li>
-        </ul>
-        <ul class="sidebar-log-contact">
-            {% if session.username %}
-            <li><a href="/profile"><span>{{ session.username|upper }}</span></a></li>
-            {% else %}
-            <li><a href="/login"><span>Iniciar Sesión</span><img
-                        src="https://icongr.am/material/arrow-left-bold-box.svg?size=25&color=333333" alt="" /></a></li>
-            {% endif %}
-            <li id="social-buttons"><a href="https://www.instagram.com/calat33/" class="instagram" target="_blank"><img
-                        src="static/images/instagram.png" width="32" alt="" /></a><a
-                    href="https://www.facebook.com/CALAT-33-169199418110806" class="facebook" target="_blank"><img
-                        src="static/images/facebook.png" width="38" alt="" /></a></li>
-        </ul>
-        <div class="language"><a href="/">Español</a><a href="/">English</a></div>
-    </div>
-    <div class="content">{% block main %}{% endblock %}</div>
-    <footer class="{% block classfooter %}{% endblock %}">
-        <div class="colabs">
-            <img src="static/images/footer/Anadolu.png" width="65" alt="">
-            <img src="static/images/footer/Crayons-Copains.png" width="65" alt="">
-            <img src="static/images/footer/Franks-chop.png" width="65" alt="">
-            <img src="static/images/footer/mary-ward-logo1.gif" width="65" alt="">
-            <img src="static/images/footer/sicos2.png" width="65" alt="">
-            <img src="static/images/footer/sisters.png" width="65" alt="">
+{% if session.theme %}
+<body class="{{session.theme}}">
+    {% else %}
+    <body class="{% block classbody %}{% endblock %}">
+        {% endif %}
+        <nav class="navbar-logo">
+            <a class="logo" href="/">
+                <img src="static/images/logo_calart.png" alt="" />
+            </a>
+            <img src="static/images/favicon_calart.png" width="38" class="button-nav" alt="display navbar" />
+        </nav>
+        <div class="sidebar">
+            <ul class="sidebar-navigation">
+                <li><a href="/"><span>Inicio</span><img src="https://icongr.am/material/home.svg?size=25&color=333333"
+                            alt="home icon" /></a></li>
+                <li><a href="#"><span>Productos</span><img
+                            src="https://icongr.am/material/book-open-variant.svg?size=25&color=333333" alt="" /></a>
+                </li>
+                <li><a href="#"><span>Servicios</span><img
+                            src="https://icongr.am/material/earth-box.svg?size=25&color=333333" alt="" /></a></li>
+                <li><a href="/social"><span>Social-Medio Ambiente</span><img
+                            src="https://icongr.am/material/cards-heart.svg?size=25&color=333333" alt="" /></a></li>
+            </ul>
+            <ul class="sidebar-log-contact">
+                {% if session.username %}
+                <li><a href="/profile"><span>{{ session.username|upper }}</span></a></li>
+                {% else %}
+                <li><a href="/login"><span>Iniciar Sesión</span><img
+                            src="https://icongr.am/material/arrow-left-bold-box.svg?size=25&color=333333" alt="" /></a>
+                </li>
+                {% endif %}
+                <li id="social-buttons"><a href="https://www.instagram.com/calat33/" class="instagram"
+                        target="_blank"><img src="static/images/instagram.png" width="32" alt="" /></a><a
+                        href="https://www.facebook.com/CALAT-33-169199418110806" class="facebook" target="_blank"><img
+                            src="static/images/facebook.png" width="38" alt="" /></a></li>
+            </ul>
+            <div class="language"><a href="/">Español</a><a href="/">English</a></div>
         </div>
-    </footer>
-</body>
+        <div class="content">{% block main %}{% endblock %}</div>
+        <footer class="{% block classfooter %}{% endblock %}">
+            <div class="colabs">
+                <img src="static/images/footer/Anadolu.png" width="65" alt="">
+                <img src="static/images/footer/Crayons-Copains.png" width="65" alt="">
+                <img src="static/images/footer/Franks-chop.png" width="65" alt="">
+                <img src="static/images/footer/mary-ward-logo1.gif" width="65" alt="">
+                <img src="static/images/footer/sicos2.png" width="65" alt="">
+                <img src="static/images/footer/sisters.png" width="65" alt="">
+            </div>
+        </footer>
+    </body>
 </html>
