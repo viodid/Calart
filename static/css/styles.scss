@@ -352,61 +352,61 @@ input[type="password"]::placeholder {
     width: 58px;
     height: 30px;
     border: solid 1px var(--text);
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 2px;
-    bottom: 1px;
-    background-color: var(--third);
-    transition: .4s;
-    border: solid 1px var(--text);
-  }
-  
-  input:checked + .slider {
-    background-color: var(--first);
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px var(--first);
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
+}
 
-  label {
-      margin-bottom: 0;
-  }
+/* Hide default HTML checkbox */
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
 
-  .label-palette {
-    margin-bottom: 0.4rem;
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-  }
+/* The slider */
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 2px;
+bottom: 1px;
+background-color: var(--third);
+transition: .4s;
+border: solid 1px var(--text);
+}
+
+input:checked + .slider {
+background-color: var(--first);
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px var(--first);
+}
+
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+label {
+    margin-bottom: 0;
+}
+
+.label-palette {
+margin-bottom: 0.4rem;
+width: 50%;
+display: flex;
+justify-content: space-between;
+}
 
 @each $name, $color in $default_palette {
     // selector based on href name
