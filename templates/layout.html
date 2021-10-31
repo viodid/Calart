@@ -28,7 +28,7 @@
     <link rel="icon" type="image/png" href="static/images/favicon_calart.png" />
 </head>
 {% if session.theme %}
-<body class="{{session.theme}}">
+<body class="{{session.theme}} {% block gradient %}{% endblock %}">
     {% else %}
     <body class="{% block classbody %}{% endblock %}">
         {% endif %}

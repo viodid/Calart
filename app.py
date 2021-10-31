@@ -1,3 +1,4 @@
+from logging import log
 from flask import Flask, render_template, request, redirect, session
 from cs50 import SQL
 from helpers import hash, checkPasswordhash, loginRequired
@@ -135,6 +136,17 @@ def profile():
     print(session["theme"])
 
     return render_template("profile.html")
+
+
+@app.route("/change", methods=["GET", "POST"])
+@loginRequired
+def change():
+    if request.method == "POST":
+
+        # Redirect user to login
+        return redirect("/login")
+
+    return render_template("change.html")
 
 
 @app.route("/social")

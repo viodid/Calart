@@ -48,6 +48,13 @@ $dark_palette: (
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
     line-height: 1.75;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+
 }
 
 html {
@@ -64,12 +71,12 @@ body {
     min-height: 100vh;
 }
 
-* a:hover {
+a:hover {
     text-decoration: none;
     color: inherit;
 }
 
-* a {
+a {
     color: inherit;
 }
 
@@ -333,7 +340,7 @@ input[type="password"]::placeholder {
 }
 
 .gradient-bkgd {
-    background-image: linear-gradient(180deg,var(--first),var(--gradient))
+    background-image: linear-gradient(180deg,var(--second),var(--gradient))
 }
 
 .none-bkgd {
@@ -406,9 +413,19 @@ label {
     }
 }
 
+.buttons_settings_profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media screen and (min-width: 480px) {
     .logo {
         width: 30%;
+    }
+
+    .navbar-logo {
+        width: 100%;
     }
 
     .button-nav {
