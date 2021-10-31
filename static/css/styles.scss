@@ -40,7 +40,7 @@ $dark_palette: (
     --first: #b1b1b1; 
     --second: #222;
     --third: #444546;
-    --gradient: #6c317a;
+    --gradient: #e5a7f3;
 }
 
 * {
@@ -71,6 +71,14 @@ body {
 
 * a {
     color: inherit;
+}
+
+u {
+    color: var(--gradient);
+}
+
+b {
+    color: var(--first);
 }
 
 .navbar-logo {
