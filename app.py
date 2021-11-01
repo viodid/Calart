@@ -133,8 +133,6 @@ def profile():
             "UPDATE users SET theme = ? WHERE username = ?", theme, session["username"]
         )
 
-    print(session["theme"])
-
     return render_template("profile.html")
 
 
@@ -142,7 +140,23 @@ def profile():
 @loginRequired
 def change():
     if request.method == "POST":
-
+        last_password = request.form.get("last_password")
+        password = request.form.get("password")
+        confirmation = request.form.get("confirmation")
+        if not last_password or not password or not password:
+            return render_template(
+                "apology.html", top=400, bottom="Al_menos_un_campo_sin_rellenar"
+            )
+        elif password != confirmation:
+            return render_template(
+                "apology.html", top=400, bottom="Las_contraseñas_no_coinciden_:("
+            )
+        # update username's password into the db
+        db.execute(
+            "UPDATE users SET hash = ? WHERE username = ?",
+            hash(password),
+            session["username"],
+        )
         # Redirect user to login
         return redirect("/login")
 

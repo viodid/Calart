@@ -420,6 +420,12 @@ label {
 }
 
 @media screen and (min-width: 480px) {
+/* TO MAKE THE WEB RESPONSIVE IN DESKTOP:
+https://stackoverflow.com/questions/55375332/check-if-device-is-mobile-in-flask/55376237
+https://flask-mobility.readthedocs.io/en/latest/
+*/
+
+
     .logo {
         width: 30%;
     }
