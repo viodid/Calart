@@ -32,6 +32,7 @@
     {% else %}
     <body class="{% block classbody %}{% endblock %}">
         {% endif %}
+        {% if request.MOBILE %}
         <nav class="navbar-logo">
             <a class="logo" href="/">
                 <img src="static/images/logo_calart.png" alt="" />
@@ -65,6 +66,31 @@
             </ul>
             <div class="language"><a href="/">Español</a><a href="/">English</a></div>
         </div>
+        {% else %}
+        <nav class="navbar-logo">
+            <a class="logo" href="/">
+                <img src="static/images/logo_calart.png" alt="" />
+            </a>
+            <ul class="desktop_nav">
+                <li><a href="/"><span>Inicio</span><img src="https://icongr.am/material/home.svg?size=25&color=333333"
+                            alt="home icon" /></a></li>
+                <li><a href="#"><span>Productos</span><img
+                            src="https://icongr.am/material/book-open-variant.svg?size=25&color=333333" alt="" /></a>
+                </li>
+                <li><a href="#"><span>Servicios</span><img
+                            src="https://icongr.am/material/earth-box.svg?size=25&color=333333" alt="" /></a></li>
+                <li><a href="/social"><span>Social-Medio Ambiente</span><img
+                            src="https://icongr.am/material/cards-heart.svg?size=25&color=333333" alt="" /></a></li>
+                {% if session.username %}
+                <li><a href="/profile"><span>{{ session.username|upper }}</span></a></li>
+                {% else %}
+                <li><a href="/login"><span>Iniciar Sesión</span><img
+                            src="https://icongr.am/material/arrow-left-bold-box.svg?size=25&color=333333" alt="" /></a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
         <div class="content">{% block main %}{% endblock %}</div>
         <footer class="{% block classfooter %}{% endblock %}">
             <div class="colabs">

@@ -5,12 +5,15 @@ const values = [["#222", "#ee8d11", "#ffdcaf", "#fff0dd", "#0095d5"],
 ["#222", "#1772b9", "#4db5e2", "#99d4ee", "#ee8d11"], ["#fefefb", "#b1b1b1", "#222", "#444546", "#6c317a"]];
 
 function listen() {
-    document.querySelector(".button-nav")
-        .addEventListener("click", function () {
-            document.querySelector(".button-nav").style.transform = `rotate(${degrees}deg)`;
-            degrees += 180;
-            displayNavbar();
-        });
+
+    if (document.querySelector(".button-nav") != null) {
+        document.querySelector(".button-nav")
+            .addEventListener("click", function () {
+                document.querySelector(".button-nav").style.transform = `rotate(${degrees}deg)`;
+                degrees += 180;
+                displayNavbar();
+            });
+    }
 
     if (document.querySelector(".toggle-password") != null) {
         document.querySelector(".toggle-password")

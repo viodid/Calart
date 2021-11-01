@@ -25,6 +25,17 @@
 * {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.75;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 html {
@@ -39,6 +50,10 @@ body {
   justify-content: space-between;
   color: var(--text);
   min-height: 100vh;
+}
+
+li {
+  list-style: none;
 }
 
 a:hover {
@@ -110,7 +125,6 @@ b {
   flex-wrap: wrap;
   flex: 1 1 100%;
   padding-left: 0;
-  list-style: none;
 }
 
 .sidebar-log-contact li {
@@ -410,31 +424,45 @@ label {
 }
 
 @media screen and (min-width: 480px) {
+  /* TO MAKE THE WEB RESPONSIVE IN DESKTOP:
+  https://stackoverflow.com/questions/55375332/check-if-device-is-mobile-in-flask/55376237
+  https://flask-mobility.readthedocs.io/en/latest/
+  */
+  .content {
+    margin: 10rem 2rem 2rem 2rem;
+  }
+
   .logo {
     width: 30%;
+    margin-left: 2rem;
   }
 
   .navbar-logo {
     width: 100%;
   }
 
-  .button-nav {
-    /*display: none;*/
+  .desktop_nav {
+    display: flex;
+    flex-grow: 2;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
   }
 
-  * {
-    cursor: default;
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Safari */
-    -khtml-user-select: none;
-    /* Konqueror HTML */
-    -moz-user-select: none;
-    /* Old versions of Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    user-select: none;
+  .desktop_nav span {
+    margin-right: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .desktop_nav a {
+    display: flex;
+    transition: font-weight 0.3s, letter-spacing 0.3s, color 0.6s;
+  }
+
+  .desktop_nav a:hover {
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: var(--gradient);
   }
 }
 

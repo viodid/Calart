@@ -1,9 +1,11 @@
 from logging import log
 from flask import Flask, render_template, request, redirect, session
+from flask_mobility import Mobility
 from cs50 import SQL
 from helpers import hash, checkPasswordhash, loginRequired
 
 app = Flask(__name__)
+Mobility(app)
 app.config.from_pyfile("config.py")
 
 
