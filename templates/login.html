@@ -4,6 +4,10 @@
 Iniciar Sesión
 {% endblock %}
 
+{% block classcontent%}
+form-desktop
+{% endblock %}
+
 {% block main %}
 <form class="intro" method="post" action="/login">
   <h1 class="center-text">Iniciar Sesión<span class="period">.</span></h1>
@@ -24,8 +28,7 @@ Iniciar Sesión
   </div>
   <div class="button-login-container">
     <button class="button" type="submit">Iniciar Sesión</button>
-    <button type="button" class="button register"><a href="/register">Registrarse</a></button>
+    <a href="/register" class="button register"><button>Registrarse</button></a>
   </div>
 </form>
-
 {% endblock %}

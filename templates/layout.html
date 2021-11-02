@@ -91,7 +91,7 @@
             </ul>
         </nav>
         {% endif %}
-        <div class="content">{% block main %}{% endblock %}</div>
+        <div class="content {% block classcontent %}{% endblock %}">{% block main %}{% endblock %}</div>
         <footer class="{% block classfooter %}{% endblock %}">
             <div class="colabs">
                 <img src="static/images/footer/Anadolu.png" width="65" alt="">

@@ -442,6 +442,28 @@ label {
   }
 
   .desktop_nav {
+    display: none;
+  }
+
+  .form-desktop {
+    margin-right: 25%;
+    margin-left: 25%;
+  }
+
+  .button {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a button {
+    border: none;
+    background-color: transparent;
+  }
+}
+@media screen and (min-width: 1160px) {
+  .desktop_nav {
     display: flex;
     flex-grow: 2;
     justify-content: space-evenly;
