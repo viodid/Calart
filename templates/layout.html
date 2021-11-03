@@ -91,7 +91,9 @@
             </ul>
         </nav>
         {% endif %}
+        {% block video %}{% endblock %}
         <div class="content {% block classcontent %}{% endblock %}">{% block main %}{% endblock %}</div>
+        {% block long_index %}{% endblock %}
         <footer class="{% block classfooter %}{% endblock %}">
             <div class="colabs">
                 <img src="static/images/footer/Anadolu.png" width="65" alt="">

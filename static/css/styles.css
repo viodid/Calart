@@ -428,8 +428,17 @@ label {
   https://stackoverflow.com/questions/55375332/check-if-device-is-mobile-in-flask/55376237
   https://flask-mobility.readthedocs.io/en/latest/
   */
+  footer {
+    display: none;
+  }
+
   .content {
-    margin: 10rem 2rem 2rem 2rem;
+    margin: 0;
+    display: block;
+    position: relative;
+    top: 80vh;
+    background-color: var(--third);
+    opacity: 0.75;
   }
 
   .logo {
@@ -439,6 +448,7 @@ label {
 
   .navbar-logo {
     width: 100%;
+    z-index: 1;
   }
 
   .desktop_nav {
@@ -460,6 +470,13 @@ label {
   a button {
     border: none;
     background-color: transparent;
+  }
+
+  video {
+    width: 100%;
+    z-index: -1;
+    position: fixed;
+    top: 100px;
   }
 }
 @media screen and (min-width: 1160px) {
