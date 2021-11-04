@@ -79,7 +79,7 @@
                 </li>
                 <li><a href="#"><span>Servicios</span><img
                             src="https://icongr.am/material/earth-box.svg?size=25&color=333333" alt="" /></a></li>
-                <li><a href="/social"><span>Social-Medio Ambiente</span><img
+                <li><a href="#social"><span>Social-Medio Ambiente</span><img
                             src="https://icongr.am/material/cards-heart.svg?size=25&color=333333" alt="" /></a></li>
                 {% if session.username %}
                 <li><a href="/profile"><span>{{ session.username|upper }}</span></a></li>
@@ -92,8 +92,8 @@
         </nav>
         {% endif %}
         {% block video %}{% endblock %}
-        <div class="content {% block classcontent %}{% endblock %}">{% block main %}{% endblock %}</div>
-        {% block long_index %}{% endblock %}
+        <div class="content {% block classcontent %}{% endblock %}">{% block main %}{% endblock %}{% block long_index
+            %}{% endblock %}</div>
         <footer class="{% block classfooter %}{% endblock %}">
             <div class="colabs">
                 <img src="static/images/footer/Anadolu.png" width="65" alt="">

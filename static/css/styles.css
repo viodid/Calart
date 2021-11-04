@@ -436,9 +436,7 @@ label {
     margin: 0;
     display: block;
     position: relative;
-    top: 80vh;
-    background-color: var(--third);
-    opacity: 0.75;
+    top: 86.5vh;
   }
 
   .logo {
@@ -477,6 +475,25 @@ label {
     z-index: -1;
     position: fixed;
     top: 100px;
+  }
+
+  .slider {
+    box-shadow: -2px -1px 19px 11px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    margin-bottom: 500px;
+    background-color: var(--third);
+    padding: 0rem 4rem;
+  }
+
+  #intro-title {
+    margin: 0;
+    margin-bottom: 3rem;
+    background-color: var(--first);
+    text-align: center;
+    height: 13.5vh;
+    font-size: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 @media screen and (min-width: 1160px) {
