@@ -1,6 +1,7 @@
 from logging import log
 from flask import Flask, render_template, request, redirect, session
 from flask_mobility import Mobility
+
 from cs50 import SQL
 from helpers import hash, checkPasswordhash, loginRequired
 
@@ -12,9 +13,20 @@ app.config.from_pyfile("config.py")
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calart.db")
 
+mobile_devices = [
+    "android",
+    "iphone",
+    "windows phone",
+]
+
 
 @app.route("/")
 def index():
+    print(request.user_agent.platform)
+
+    # load diferent pages as diferent devices
+    if request.user_agent in mobile_devices:
+        return render_template("mobile/index.html")
     return render_template("index.html")
 
 

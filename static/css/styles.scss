@@ -476,19 +476,17 @@ https://flask-mobility.readthedocs.io/en/latest/
         width: 100%;
         z-index: -1;
         position: fixed;
-        top: 100px;
+        top: 70px;
     }
 
     .slider {
         box-shadow: -2px -1px 19px 11px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
         margin-bottom: 500px;
         background-color: var(--third);
-        padding: 0rem 4rem;
     }
 
     #intro-title {
         margin: 0;
-        margin-bottom: 3rem;
         background-color: var(--first);
         text-align: center;
         height: 13.5vh;
@@ -498,6 +496,13 @@ https://flask-mobility.readthedocs.io/en/latest/
         justify-content: center;
     }
 
+    .period {
+        color: var(--text);
+    }
+
+    .slider p {
+        padding: 2rem 10rem;
+    }
 }
 
 @media screen and (min-width: 1160px) {
