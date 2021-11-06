@@ -1,4 +1,3 @@
-from logging import log
 from flask import Flask, render_template, request, redirect, session
 from flask_mobility import Mobility
 
@@ -13,20 +12,17 @@ app.config.from_pyfile("config.py")
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calart.db")
 
-mobile_devices = [
-    "android",
-    "iphone",
-    "windows phone",
-]
+mobile_devices = ["android", "iphone", "windows phone"]
+user_agent = ""
 
 
 @app.route("/")
 def index():
-    print(request.user_agent.platform)
-
+    # print(request.user_agent.platform)
     # load diferent pages as diferent devices
-    if request.user_agent in mobile_devices:
-        return render_template("mobile/index.html")
+    user_agent = request.user_agent.platform
+    if user_agent not in mobile_devices:
+        return render_template("desktop/index.html")
     return render_template("index.html")
 
 
@@ -72,7 +68,7 @@ def login():
         session["theme"] = rows[0]["theme"]
 
         # Redirect user to home page
-        return redirect("/")
+        return index()
 
     return render_template("login.html")
 

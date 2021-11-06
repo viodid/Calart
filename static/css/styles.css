@@ -65,6 +65,11 @@ a {
   color: inherit;
 }
 
+a button {
+  border: none;
+  background-color: transparent;
+}
+
 u {
   color: var(--gradient);
 }
@@ -273,6 +278,7 @@ h2 {
 .form-input input {
   flex-grow: 2;
   border: none;
+  z-index: 1;
 }
 
 input[type=password] {
@@ -297,6 +303,9 @@ input[type=password]::placeholder {
 
 .button {
   width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 2rem;
   border: none;
   margin-bottom: 2rem;
@@ -309,6 +318,7 @@ input[type=password]::placeholder {
 .register {
   color: var(--first);
   background-color: #fff;
+  font-weight: bold;
 }
 
 .button:active {
@@ -449,7 +459,7 @@ label {
     z-index: 1;
   }
 
-  .desktop_nav {
+  .desktop-nav {
     display: none;
   }
 
@@ -460,14 +470,6 @@ label {
 
   .button {
     width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  a button {
-    border: none;
-    background-color: transparent;
   }
 
   video {
@@ -498,12 +500,12 @@ label {
     color: var(--text);
   }
 
-  .slider p {
+  .padding-text {
     padding: 2rem 10rem;
   }
 }
 @media screen and (min-width: 1160px) {
-  .desktop_nav {
+  .desktop-nav {
     display: flex;
     flex-grow: 2;
     justify-content: space-evenly;
@@ -511,17 +513,17 @@ label {
     padding: 0;
   }
 
-  .desktop_nav span {
+  .desktop-nav span {
     margin-right: 0.5rem;
     font-size: 1.3rem;
   }
 
-  .desktop_nav a {
+  .desktop-nav a {
     display: flex;
     transition: font-weight 0.3s, letter-spacing 0.3s, color 0.6s;
   }
 
-  .desktop_nav a:hover {
+  .desktop-nav a:hover {
     font-weight: 500;
     letter-spacing: 0.1rem;
     color: var(--gradient);
