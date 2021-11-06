@@ -3,6 +3,7 @@ from flask_mobility import Mobility
 
 from cs50 import SQL
 from helpers import hash, checkPasswordhash, loginRequired
+import os
 
 app = Flask(__name__)
 Mobility(app)
@@ -179,4 +180,5 @@ def social():
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0", port=443)
+    port = os.environ.get("PORT", 5000)
+    app.run(debug=False, host="0.0.0.0", port=port)
