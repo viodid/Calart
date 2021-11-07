@@ -36,6 +36,7 @@
 ehthumbs.db
 Thumbs.db
 
-# bytecode compiled #
+
 ######################
 /__pycache__
+helpers.py
