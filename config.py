@@ -1,3 +1,3 @@
 from os import urandom
 
-SECRET_KEY = urandom(12)
+SECRET_KEY = "6478264767dg"
