@@ -35,7 +35,7 @@
         {% if request.MOBILE %}
         <nav class="navbar-logo">
             <a class="logo" href="/">
-                <img src="static/images/calat.png" alt="" />
+                <img src="static/images/logo_calart.png" alt="" />
             </a>
             <img src="static/images/favicon_calart.png" width="38" class="button-nav" alt="display navbar" />
         </nav>
@@ -69,17 +69,17 @@
         {% else %}
         <nav class="navbar-logo">
             <a class="logo" href="/">
-                <img src="static/images/calat.png" alt="" />
+                <img src="static/images/logo_calart.png" alt="" />
             </a>
             <ul class="desktop-nav">
                 <li><a href="/"><span>Inicio</span><img src="https://icongr.am/material/home.svg?size=25&color=333333"
                             alt="home icon" /></a></li>
-                <li><a href="#"><span>Productos</span><img
+                <li><a href="/#"><span>Productos</span><img
                             src="https://icongr.am/material/book-open-variant.svg?size=25&color=333333" alt="" /></a>
                 </li>
-                <li><a href="#"><span>Servicios</span><img
+                <li><a href="/#"><span>Servicios</span><img
                             src="https://icongr.am/material/earth-box.svg?size=25&color=333333" alt="" /></a></li>
-                <li><a href="#social"><span>Social-Medio Ambiente</span><img
+                <li><a href="/#social"><span>Social-Medio Ambiente</span><img
                             src="https://icongr.am/material/cards-heart.svg?size=25&color=333333" alt="" /></a></li>
                 {% if session.username %}
                 <li><a href="/profile"><span>{{ session.username|upper }}</span></a></li>
