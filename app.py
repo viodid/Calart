@@ -8,6 +8,7 @@ import os
 app = Flask(__name__)
 Mobility(app)
 
+# REMEMBER UNCOMMENT FOR DEPLOYMENT
 # app.config.from_pyfile("config.py")
 app.config.from_pyfile("dev_config.py")
 
@@ -179,6 +180,11 @@ def change():
 @app.route("/social")
 def social():
     return render_template("social.html")
+
+
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":
