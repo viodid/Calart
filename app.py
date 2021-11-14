@@ -157,9 +157,19 @@ def change():
         last_password = request.form.get("last_password")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
+
+        # Query database for username
+        password = db.execute(
+            "SELECT hash FROM users WHERE username = ?", session["username"]
+        )
+
         if not last_password or not password or not password:
             return render_template(
                 "apology.html", top=400, bottom="Al_menos_un_campo_sin_rellenar"
+            )
+        if not checkPasswordhash(password[0]["hash"], request.form.get("password")):
+            return render_template(
+                "apology.html", top=400, bottom="contraseña_incorrecta"
             )
         elif password != confirmation:
             return render_template(

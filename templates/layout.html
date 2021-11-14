@@ -15,6 +15,7 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
 
+
     <!-- JS and Stylesheet -->
     <script type="text/javascript" src="static/js/calart.js"></script>
     <link href="static/css/styles.css" rel="stylesheet">
@@ -46,10 +47,12 @@
                 <li><a href="#"><span>Productos</span><img
                             src="https://icongr.am/material/book-open-variant.svg?size=25&color=333333" alt="" /></a>
                 </li>
-                <li><a href="#"><span>Servicios</span><img
-                            src="https://icongr.am/material/earth-box.svg?size=25&color=333333" alt="" /></a></li>
+                <!--<li><a href="#"><span>Servicios</span><img
+                            src="https://icongr.am/material/earth-box.svg?size=25&color=333333" alt="" /></a></li>-->
                 <li><a href="/social"><span>Social-Medio Ambiente</span><img
                             src="https://icongr.am/material/cards-heart.svg?size=25&color=333333" alt="" /></a></li>
+                <li><a href="/contact"><span>Contacto</span><img
+                            src="https://icongr.am/material/email.svg?size=25&color=333333" alt="" /></a></li>
             </ul>
             <ul class="sidebar-log-contact">
                 {% if session.username %}
@@ -77,10 +80,12 @@
                 <li><a href="/#"><span>Productos</span><img
                             src="https://icongr.am/material/book-open-variant.svg?size=25&color=333333" alt="" /></a>
                 </li>
-                <li><a href="/#"><span>Servicios</span><img
-                            src="https://icongr.am/material/earth-box.svg?size=25&color=333333" alt="" /></a></li>
+                <!--<li><a href="/#"><span>Servicios</span><img
+                            src="https://icongr.am/material/earth-box.svg?size=25&color=333333" alt="" /></a></li>-->
                 <li><a href="/#social"><span>Social-Medio Ambiente</span><img
                             src="https://icongr.am/material/cards-heart.svg?size=25&color=333333" alt="" /></a></li>
+                <li><a href="/contact"><span>Contacto</span><img
+                            src="https://icongr.am/material/email.svg?size=25&color=333333" alt="" /></a></li>
                 {% if session.username %}
                 <li><a href="/profile"><span>{{ session.username|upper }}</span></a></li>
                 {% else %}
