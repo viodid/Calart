@@ -38,6 +38,7 @@ Thumbs.db
 
 ######################
 /__pycache__
+/venv
 helpers.py
 Procfile
 dev_config.py
