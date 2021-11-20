@@ -9,8 +9,8 @@ app = Flask(__name__)
 Mobility(app)
 
 # REMEMBER UNCOMMENT FOR DEPLOYMENT
-app.config.from_pyfile("config.py")
-# app.config.from_pyfile("dev_config.py")
+# app.config.from_pyfile("config.py")
+app.config.from_pyfile("dev_config.py")
 
 
 # Configure CS50 Library to use SQLite database
