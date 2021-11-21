@@ -2,16 +2,14 @@ from flask import Flask, render_template, request, redirect, session
 from flask_mobility import Mobility
 
 from cs50 import SQL
-from helpers import hash, checkPasswordhash, loginRequired
-import os
+from helpers import hash, checkPasswordhash, loginRequired, sendmail
+
 
 app = Flask(__name__)
 Mobility(app)
 
 # REMEMBER UNCOMMENT FOR DEPLOYMENT
-# app.config.from_pyfile("config.py")
-app.config.from_pyfile("dev_config.py")
-
+app.config.from_pyfile("config.py")
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calart.db")
@@ -194,6 +192,36 @@ def social():
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
+    if request.method == "POST":
+        name = request.form.get("name")
+        surname = request.form.get("surname")
+        email = request.form.get("email")
+        message = request.form.get("message")
+
+        if not name or not email:
+            return render_template(
+                "apology.html", top=400, bottom="Campos_requeridos_sin_rellenar"
+            )
+        elif not message:
+            return render_template(
+                "apology.html", top=400, bottom="Mensaje_sin_escribir"
+            )
+
+        message = (
+            "Subject: Formulario contacto\n"
+            + request.form.get("message")
+            + f"\n From: {name} {surname}\n{email}"
+        ).encode("utf-8")
+
+        sendmail(
+            app.config["RECEIVER_EMAIL"],
+            message,
+            app.config["SENDER_EMAIL"],
+            app.config["PASSWORD"],
+        )
+
+        return render_template("apology.html", top=200, bottom="Mensaje_Enviado!")
+
     return render_template("contact.html")
 
 
