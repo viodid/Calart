@@ -129,6 +129,13 @@ def register():
         rows = db.execute("SELECT * FROM users WHERE email = ?", email)
         session["user_id"] = rows[0]["id"]
         session["username"] = rows[0]["username"]
+        # send confirmation email
+        sendmail(
+            app.config["RECEIVER_EMAIL"],
+            message,
+            app.config["SENDER_EMAIL"],
+            app.config["PASSWORD"],
+        )
         # Redirect user to home page
         return redirect("/")
 
@@ -207,15 +214,17 @@ def contact():
                 "apology.html", top=400, bottom="Mensaje_sin_escribir"
             )
 
-        message = (
-            "Subject: Formulario contacto\n"
-            + request.form.get("message")
-            + f"\n From: {name} {surname}\n{email}"
-        ).encode("utf-8")
+        message = f"""\
+        {request.form.get("message")}<br><br>
+        <b>From:</b> {name} {surname}<br>{email}
+        """
+
+        subject = "From Contact Page"
 
         sendmail(
             app.config["RECEIVER_EMAIL"],
             message,
+            subject,
             app.config["SENDER_EMAIL"],
             app.config["PASSWORD"],
         )
