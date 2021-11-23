@@ -134,6 +134,7 @@ def register():
         sendmail(
             app.config["RECEIVER_EMAIL"],
             message,
+            subject,
             app.config["SENDER_EMAIL"],
             app.config["PASSWORD"],
         )

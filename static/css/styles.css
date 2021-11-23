@@ -47,6 +47,10 @@ li {
   list-style: none;
 }
 
+ol li {
+  list-style-type: revert;
+}
+
 a:hover {
   text-decoration: none;
   color: inherit;
@@ -69,6 +73,11 @@ b {
   color: var(--first);
 }
 
+p {
+  margin-top: revert;
+  margin-bottom: revert;
+}
+
 .navbar-logo {
   /*min-height: 100px;*/
   width: 100%;
@@ -85,7 +94,7 @@ b {
 
 .logo {
   width: 19rem;
-  margin-right: -22px;
+  margin-right: -36px;
 }
 
 .logo img {
@@ -97,7 +106,7 @@ b {
   cursor: pointer;
   transition: 0.5s;
   width: 3.5rem;
-  filter: drop-shadow(#666666 -2px 2px 2px);
+  filter: drop-shadow(#999 -2px 2px 2px);
 }
 
 .sidebar {
@@ -213,9 +222,8 @@ b {
 }
 
 .content {
-  margin: 1.75rem;
   flex-grow: 2;
-  margin-top: 87px;
+  margin-top: 80px;
 }
 
 .intro h1 {
@@ -242,19 +250,10 @@ footer {
   align-items: center;
 }
 
-.colabs img {
-  margin: 1rem;
-}
-
 h2 {
   font-weight: 500;
   font-size: 2rem;
   line-height: 1.75;
-}
-
-.content img {
-  width: 100%;
-  border-radius: 4px;
 }
 
 .login-container {
@@ -443,6 +442,50 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.intro-image {
+  width: 100%;
+  height: auto;
+}
+
+.second-body {
+  margin: 0 2rem;
+  margin-top: -2.7rem;
+  position: relative;
+  background-color: var(--third);
+}
+
+.second-body p {
+  line-height: 26px;
+  font-size: 1.13rem;
+}
+
+.head-photo {
+  text-align: center;
+  padding: 20px 20px 0px;
+}
+
+.line-span {
+  width: 0;
+  height: 4px;
+  background: var(--first);
+  animation-name: line;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes line {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.paragraph0 {
+  text-align: center;
 }
 
 @media screen and (min-width: 320px) and (max-width: 820px) and (orientation: landscape) {
