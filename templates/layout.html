@@ -36,7 +36,7 @@
         {% if request.MOBILE %}
         <nav class="navbar-logo">
             <a class="logo" href="/">
-                <img src="static/images/calat.png" alt="" style="filter:drop-shadow(rgb(102, 102, 102) -2px 2px 2px)"/>
+                <img src="static/images/calat.png" alt="" style="filter:drop-shadow(#666666 -2px 2px 2px)">
             </a>
             <img src="static/images/favicon_calart.png" class="button-nav" alt="display navbar" />
         </nav>
@@ -44,62 +44,61 @@
             <ul class="sidebar-navigation">
                 <li><a href="/"><span>Inicio</span><img src="https://icongr.am/material/home.svg?size=25&color=333333"
                             alt="home icon" /></a></li>
-                <li><a href="#"><span>Productos</span><img
-                            src="https://icongr.am/material/book-open-variant.svg?size=25&color=333333" alt="" /></a>
+                <li id='disabled'><a><span>Productos</span><img
+                            src="https://icongr.am/material/book-open-variant.svg?size=25&color=333333"></a>
                 </li>
                 <!--<li><a href="#"><span>Servicios</span><img
-                            src="https://icongr.am/material/earth-box.svg?size=25&color=333333" alt="" /></a></li>-->
+                            src="https://icongr.am/material/earth-box.svg?size=25&color=333333"></a></li>-->
                 <li><a href="/social"><span>Social-Medio Ambiente</span><img
-                            src="https://icongr.am/material/cards-heart.svg?size=25&color=333333" alt="" /></a></li>
+                            src="https://icongr.am/material/cards-heart.svg?size=25&color=333333"></a></li>
                 <li><a href="/contact"><span>Contacto</span><img
-                            src="https://icongr.am/material/email.svg?size=25&color=333333" alt="" /></a></li>
+                            src="https://icongr.am/material/email.svg?size=25&color=333333"></a></li>
             </ul>
             <ul class="sidebar-log-contact">
                 {% if session.username %}
                 <li><a href="/profile"><span>{{ session.username|upper }}</span></a></li>
                 {% else %}
                 <li><a href="/login"><span>Iniciar Sesión</span><img
-                            src="https://icongr.am/material/arrow-left-bold-box.svg?size=25&color=333333" alt="" /></a>
+                            src="https://icongr.am/material/arrow-left-bold-box.svg?size=25&color=333333"></a>
                 </li>
                 {% endif %}
                 <li id="social-buttons"><a href="https://www.instagram.com/calat33/" class="instagram"
-                        target="_blank"><img src="static/images/instagram.png" width="32" alt="" /></a><a
+                        target="_blank"><img src="static/images/instagram.png" width="32"></a><a
                         href="https://www.facebook.com/CALAT-33-169199418110806" class="facebook" target="_blank"><img
-                            src="static/images/facebook.png" width="38" alt="" /></a></li>
+                            src="static/images/facebook.png" width="38"></a></li>
             </ul>
             <div class="language"><a href="/">Español</a><a href="/">English</a></div>
         </div>
         {% else %}
         <nav class="navbar-logo">
             <a class="logo" href="/">
-                <img src="static/images/calat.png" alt="" />
+                <img src="static/images/calat.png" alt="logo calat">
             </a>
             <ul class="desktop-nav">
                 <li><a href="/"><span>Inicio</span><img src="https://icongr.am/material/home.svg?size=25&color=333333"
                             alt="home icon" /></a></li>
                 <li><a href="/#"><span>Productos</span><img
-                            src="https://icongr.am/material/book-open-variant.svg?size=25&color=333333" alt="" /></a>
+                            src="https://icongr.am/material/book-open-variant.svg?size=25&color=333333"></a>
                 </li>
                 <!--<li><a href="/#"><span>Servicios</span><img
-                            src="https://icongr.am/material/earth-box.svg?size=25&color=333333" alt="" /></a></li>-->
-                <li><a href="/#social"><span>Social-Medio Ambiente</span><img
-                            src="https://icongr.am/material/cards-heart.svg?size=25&color=333333" alt="" /></a></li>
+                            src="https://icongr.am/material/earth-box.svg?size=25&color=333333"></a></li>-->
+                <li><a href="/social"><span>Social-Medio Ambiente</span><img
+                            src="https://icongr.am/material/cards-heart.svg?size=25&color=333333"></a></li>
                 <li><a href="/contact"><span>Contacto</span><img
-                            src="https://icongr.am/material/email.svg?size=25&color=333333" alt="" /></a></li>
+                            src="https://icongr.am/material/email.svg?size=25&color=333333"></a></li>
                 {% if session.username %}
                 <li><a href="/profile"><span>{{ session.username|upper }}</span></a></li>
                 {% else %}
                 <li><a href="/login"><span>Iniciar Sesión</span><img
-                            src="https://icongr.am/material/arrow-left-bold-box.svg?size=25&color=333333" alt="" /></a>
+                            src="https://icongr.am/material/arrow-left-bold-box.svg?size=25&color=333333"></a>
                 </li>
                 {% endif %}
             </ul>
         </nav>
         {% endif %}
-        {% block video %}{% endblock %}
         <div class="content {% block classcontent %}{% endblock %}">{% block main %}{% endblock %}</div>
         <footer class="{% block classfooter %}{% endblock %}">
-            <div class="colabs">
+            <div class="colabs-footer">
                 <img src="static/images/footer/Anadolu.png" width="65" alt="">
                 <img src="static/images/footer/Crayons-Copains.png" width="65" alt="">
                 <img src="static/images/footer/Franks-chop.png" width="65" alt="">

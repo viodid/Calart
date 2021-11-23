@@ -10,6 +10,7 @@ function listen() {
         document.querySelector(".button-nav")
             .addEventListener("click", function () {
                 document.querySelector(".button-nav").style.transform = `rotate(${degrees}deg)`;
+                document.querySelector(".button-nav").style.filter = 'drop-shadow(#666666 -2px 2px 2px)';
                 degrees += 180;
                 displayNavbar();
             });

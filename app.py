@@ -14,7 +14,7 @@ app.config.from_pyfile("config.py")
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calart.db")
 
-mobile_devices = ["android", "iphone", "windows phone"]
+mobile_devices = ["android", "iphone", "ipad", "windows phone"]
 user_agent = ""
 
 
@@ -22,9 +22,10 @@ user_agent = ""
 def index():
     # print(request.user_agent.platform)
     # load diferent pages as diferent devices
-    user_agent = request.user_agent.platform
-    if user_agent not in mobile_devices:
-        return render_template("desktop/index.html")
+    # user_agent = request.user_agent.platform
+    # print(user_agent)
+    # if user_agent not in mobile_devices:
+    #    return render_template("desktop/index.html")
     return render_template("index.html")
 
 

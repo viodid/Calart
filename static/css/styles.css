@@ -4,6 +4,7 @@
   --second: #ffdcaf;
   --third: #fff8ef;
   --gradient: #0095d5;
+  --texture: url("https://www.transparenttextures.com/patterns/crossword.png");
 }
 
 .blue_palette {
@@ -70,19 +71,21 @@ b {
 
 .navbar-logo {
   /*min-height: 100px;*/
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-color: var(--third);
+  background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
   padding: 0.8rem 0rem;
-  /*box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);*/
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16), 0 1px 6px rgba(0, 0, 0, 0.23);
   position: fixed;
   z-index: 2;
 }
 
 .logo {
-  width: 80%;
-  margin-right: -76px;
+  width: 19rem;
+  margin-right: -22px;
 }
 
 .logo img {
@@ -93,14 +96,14 @@ b {
 .button-nav {
   cursor: pointer;
   transition: 0.5s;
-  width: 14.5%;
+  width: 3.5rem;
   filter: drop-shadow(#666666 -2px 2px 2px);
 }
 
 .sidebar {
   display: none;
-  margin-top: 90px;
-  width: 80%;
+  margin-top: 80px;
+  width: 100%;
   position: fixed;
   right: 0;
   z-index: 1;
@@ -134,7 +137,6 @@ b {
   text-align: right;
   font-size: 1.1rem;
   margin-bottom: 1px;
-  background-color: var(--third);
 }
 
 .sidebar a {
@@ -184,6 +186,10 @@ b {
   box-shadow: none;
 }
 
+#disabled {
+  opacity: 0.3;
+}
+
 .colabs img {
   margin-bottom: 2rem;
 }
@@ -209,7 +215,7 @@ b {
 .content {
   margin: 1.75rem;
   flex-grow: 2;
-  margin-top: 100px;
+  margin-top: 87px;
 }
 
 .intro h1 {
@@ -231,6 +237,7 @@ footer {
 .colabs {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
@@ -438,7 +445,22 @@ label {
   align-items: center;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 820px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .logo img {
+    filter: drop-shadow(#666666 -2px 2px 2px);
+  }
+
   .content {
     margin-top: 175px;
   }
@@ -453,10 +475,6 @@ label {
   .logo {
     width: 30%;
     margin-left: 2rem;
-  }
-
-  .navbar-logo {
-    width: 100%;
   }
 
   .desktop-nav {
@@ -512,15 +530,14 @@ label {
     margin: 0;
   }
 
-  .colabs img {
+  .colabs-footer img {
     width: 143px;
   }
 
   button {
     font-weight: normal !important;
   }
-}
-@media screen and (min-width: 1160px) {
+
   .desktop-nav {
     display: flex;
     flex-grow: 2;
@@ -542,7 +559,7 @@ label {
   .desktop-nav a:hover {
     font-weight: 500;
     letter-spacing: 0.1rem;
-    color: var(--gradient);
+    color: var(--first);
   }
 }
 
