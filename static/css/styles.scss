@@ -2,7 +2,7 @@ $default_palette: (
     "text1": #222, 
     "first1": #ee8d11, 
     "second1": #ffdcaf, 
-    "third1": #fff0dd,
+    "third1": #fff8ef,
 );
 
 $blue_palette: (
@@ -23,7 +23,7 @@ $dark_palette: (
     --text: #222;
     --first: #ee8d11;
     --second: #ffdcaf;
-    --third: #fff0dd;
+    --third: #fff8ef;
     --gradient: #0095d5;
 }
 
@@ -93,35 +93,37 @@ b {
 }
 
 .navbar-logo {
-    min-height: 100px;
+    /*min-height: 100px;*/
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: var(--third);
     padding: 0.8rem 0rem;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    /*box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);*/
     position: fixed;
     z-index: 2;
 }
 
 .logo {
     width: 80%;
+    margin-right: -76px;
 }
 
 .logo img {
     height: auto;
-    width: 100%;
+    width: 85%;
 }
 
 .button-nav {
     cursor: pointer;
     transition: 0.5s;
-    margin-right: 0.45rem;
+    width: 14.5%;
+    filter: drop-shadow(rgb(102, 102, 102) -2px 2px 2px);
 }
 
 .sidebar {
     display: none;
-    margin-top: 100px;
+    margin-top: 90px;
     width: 80%;
     position: fixed;
     right: 0;
