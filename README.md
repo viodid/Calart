@@ -1,4 +1,4 @@
-# Finance Tracker
+# Flask Portfolio
 
 Calat33 is a web app implemented using Flask and bootstrap that works like a simple portfolio. The following functionalities have been added to the app.
 
