@@ -162,7 +162,7 @@ def profile():
 def change():
     if request.method == "POST":
         last_password = request.form.get("last_password")
-        password = request.form.get("password")
+        password_input = request.form.get("password")
         confirmation = request.form.get("confirmation")
 
         # Query database for username
@@ -170,22 +170,23 @@ def change():
             "SELECT hash FROM users WHERE username = ?", session["username"]
         )
 
-        if not last_password or not password or not password:
+        if not last_password or not password_input or not confirmation:
             return render_template(
                 "apology.html", top=400, bottom="Al_menos_un_campo_sin_rellenar"
             )
-        if not checkPasswordhash(password[0]["hash"], request.form.get("password")):
+
+        if not checkPasswordhash(password[0]["hash"], last_password):
             return render_template(
                 "apology.html", top=400, bottom="contraseña_incorrecta"
             )
-        elif password != confirmation:
+        elif password_input != confirmation:
             return render_template(
                 "apology.html", top=400, bottom="Las_contraseñas_no_coinciden_:("
             )
         # update username's password into the db
         db.execute(
             "UPDATE users SET hash = ? WHERE username = ?",
-            hash(password),
+            hash(password_input),
             session["username"],
         )
         # Redirect user to login
