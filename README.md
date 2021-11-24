@@ -1,6 +1,6 @@
 # Finance Tracker
 
-Calat33 is a web app implemented using Flask and bootstrap that works like a simple portfolio. The following functionalities have been added to the app-
+Calat33 is a web app implemented using Flask and bootstrap that works like a simple portfolio. The following functionalities have been added to the app.
 
 - Register: Any person can register to make a new account.
 - Palette: Change and customize the colors palette of the web page.
@@ -14,16 +14,10 @@ Calat33 is a web app implemented using Flask and bootstrap that works like a sim
 https://youtu.be/PeUJuinLejI
 
 <hr/>
-
-
-
-
-
 https://user-images.githubusercontent.com/56805021/143233922-6c6ad669-9ce9-4775-96ec-1b49c3657e70.mov
 
 
 <br/>
-
 
 
 ## Tech Stack
