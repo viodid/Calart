@@ -8,7 +8,6 @@ from helpers import hash, checkPasswordhash, loginRequired, sendmail
 app = Flask(__name__)
 Mobility(app)
 
-# REMEMBER UNCOMMENT FOR DEPLOYMENT
 app.config.from_pyfile("config.py")
 
 # Configure CS50 Library to use SQLite database
