@@ -36,7 +36,7 @@
         {% if request.MOBILE %}
         <nav class="navbar-logo">
             <a class="logo" href="/">
-                <img src="static/images/calat.png" alt="" style="filter:drop-shadow(#999 -2px 2px 2px)">
+                <img src="static/images/calat.png" alt="" style="filter:drop-shadow(#111 -2px 2px 2px)">
             </a>
             <img src="static/images/favicon_calart.png" class="button-nav" alt="display navbar" />
         </nav>
@@ -97,6 +97,8 @@
         </nav>
         {% endif %}
         <div class="content">{% block main %}{% endblock %}</div>
+        {% block second_main %}{% endblock %}
+        <!--
         <footer class="{% block classfooter %}{% endblock %}">
             <div class="colabs-footer">
                 <img src="static/images/footer/Anadolu.png" width="65" alt="">
@@ -107,5 +109,6 @@
                 <img src="static/images/footer/sisters.png" width="65" alt="">
             </div>
         </footer>
+    -->
     </body>
 </html>
