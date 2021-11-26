@@ -70,7 +70,7 @@ def login():
         session["theme"] = rows[0]["theme"]
 
         # Redirect user to home page
-        return index()
+        return redirect("/profile")
 
     return render_template("login.html")
 
@@ -138,7 +138,7 @@ def register():
             app.config["PASSWORD"],
         )
         # Redirect user to home page
-        return redirect("/")
+        return redirect("/profile")
 
     return render_template("register.html")
 
