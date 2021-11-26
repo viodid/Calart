@@ -76,6 +76,7 @@ b {
 p {
   margin-top: revert;
   margin-bottom: revert;
+  font-size: 1.1rem;
 }
 
 .navbar-logo {
@@ -470,10 +471,7 @@ label {
   width: 0;
   height: 4px;
   background: var(--first);
-  animation-name: line;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation: line 4s infinite alternate;
 }
 
 @keyframes line {
@@ -545,24 +543,198 @@ label {
 .island img {
   width: 100%;
   height: auto;
+  margin-bottom: -1px;
 }
 
-.second-main {
-  background-color: #1772b9;
+.second-body {
+  background-image: linear-gradient(180deg, #1772b9, #043d68);
   color: white;
 }
 
-/*@media screen and (min-width: 320px) and (max-width: 820px) and (orientation: landscape) {
-    html {
-      transform: rotate(-90deg);
-      transform-origin: left top;
-      width: 100vh;
-      overflow-x: hidden;
-      position: absolute;
-      top: 100%;
-      left: 0;
-    }
-}*/
+.container-blue-containers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.blue-containers {
+  margin: 0 2rem 2rem 2rem;
+  max-width: 600px;
+}
+
+.valores-container {
+  width: 100%;
+  min-height: 150px;
+}
+
+.valores {
+  margin: 0.5rem;
+}
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.bubble {
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(45deg, #63aeff, transparent);
+  border-radius: 50%;
+  animation: flying 20s infinite ease-in;
+  filter: drop-shadow(#111 -2px 2px 2px);
+  z-index: 1;
+  opacity: 0;
+}
+
+.bubble:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  left: 10%;
+  animation-duration: 16s;
+}
+
+.bubble:nth-child(2) {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  animation-duration: 10s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  left: 35%;
+  animation-duration: 20s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(4) {
+  width: 25px;
+  height: 25px;
+  left: 50%;
+  animation-duration: 14s;
+  animation-delay: 0.5s;
+}
+
+.bubble:nth-child(5) {
+  width: 35px;
+  height: 35px;
+  left: 55%;
+  animation-duration: 12s;
+  animation-delay: 1.5s;
+}
+
+.bubble:nth-child(6) {
+  width: 45px;
+  height: 45px;
+  left: 65%;
+  animation-duration: 16s;
+  animation-delay: 3s;
+}
+
+.bubble:nth-child(7) {
+  width: 25px;
+  height: 25px;
+  left: 75%;
+  animation-duration: 8s;
+  animation-delay: 2.5s;
+}
+
+.bubble:nth-child(8) {
+  width: 30px;
+  height: 30px;
+  left: 80%;
+  animation-duration: 6s;
+  animation-delay: 1.25s;
+}
+
+.bubble:nth-child(9) {
+  width: 15px;
+  height: 15px;
+  left: 70%;
+  animation-duration: 9s;
+  animation-delay: 0.25s;
+}
+
+.bubble:nth-child(10) {
+  width: 50px;
+  height: 50px;
+  left: 85%;
+  animation-duration: 5s;
+  animation-delay: 3s;
+}
+
+@keyframes flying {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateX(50px);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  75% {
+    transform: translateX(50px);
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 800px;
+    transform: translateX(-100px);
+  }
+}
+@-moz-keyframes flying {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateX(50px);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  75% {
+    transform: translateX(50px);
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 800px;
+    transform: translateX(-100px);
+  }
+}
+@-webkit-keyframes flying {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateX(50px);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  75% {
+    transform: translateX(50px);
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 800px;
+    transform: translateX(-100px);
+  }
+}
 @media screen and (min-width: 688px) {
   .intro-image {
     max-height: 326px;
@@ -571,10 +743,6 @@ label {
   }
 }
 @media screen and (min-width: 1024px) {
-  p {
-    font-size: 1.1rem;
-  }
-
   .intro-image {
     max-height: 621px;
     object-fit: cover;
