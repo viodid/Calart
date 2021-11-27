@@ -194,11 +194,6 @@ def change():
     return render_template("change.html")
 
 
-@app.route("/social")
-def social():
-    return render_template("social.html")
-
-
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
@@ -234,6 +229,16 @@ def contact():
         return render_template("apology.html", top=200, bottom="Mensaje_Enviado!")
 
     return render_template("contact.html")
+
+
+@app.route("/social")
+def social():
+    return render_template("social.html")
+
+
+@app.route("/artist")
+def artist():
+    return render_template("artist.html")
 
 
 if __name__ == "__main__":
