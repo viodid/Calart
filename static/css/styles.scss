@@ -226,18 +226,32 @@ p {
     opacity: 0.3;
 }
 
+
+.social-container {
+    margin: 0 2rem;
+}
+
+.colabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.colabs-container {
+    max-width: 600px;
+    margin: 0 2rem;
+}
+
 .colabs img {
+    width: 100%;
     margin-bottom: 2rem;
+    border-radius: 10px;
 }
 
-.colabs h3 {
-    text-decoration: underline;
-}
-
-.descripcion-porcentaje {
+.descripcion-porcentaje p {
     font-size: 0.8rem;
     font-weight: 200;
-    margin-top: 3rem;
+    margin-left: 2rem;
 }
 
 
@@ -818,6 +832,13 @@ label {
 
     .fix-size-container {
         margin: 0rem 1rem 1rem 1rem;
+    }
+}
+
+
+@-moz-document url-prefix() {
+    .second-body {
+        background: #1772b9;
     }
 }
 
