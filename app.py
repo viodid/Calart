@@ -130,8 +130,15 @@ def register():
         session["user_id"] = rows[0]["id"]
         session["username"] = rows[0]["username"]
         # send confirmation email
+        subject = "Bienvenido a Calat33🌱 🌎"
+        message = f"""\
+        ¡Bienvenid@ a bordo {username}!<br>
+        Gracias por registrarte en nuestra página web! De ahora en adelante irás reciviendo noticias sobre nuestras andadurías.<br>
+        Si no deseas recibir más correos, simplemente responde a cualquier email con la palabra baja.<br><br>
+        Nos emociona que quieras ser parte del cambio,<br><br>
+        El equipo de Calat33."""
         sendmail(
-            app.config["RECEIVER_EMAIL"],
+            email,
             message,
             subject,
             app.config["SENDER_EMAIL"],
@@ -216,7 +223,7 @@ def contact():
         <b>From:</b> {name} {surname}<br>{email}
         """
 
-        subject = "From Contact Page"
+        subject = "Form Contact Page"
 
         sendmail(
             app.config["RECEIVER_EMAIL"],

@@ -60,15 +60,26 @@ def sendmail(receiver, message_client, subject, sender, password):
     message["From"] = sender
     message["To"] = receiver
 
-    text = "hehe whatever"
+    text = message_client
 
     html = f"""\
         <html>
-            <body style="padding:2%">
-                <div style="display:flex; justify-content:center; align-items:center; margin-bottom:5%">
-                    <img src="https://i.ibb.co/xmtSkh6/calat-email.png" style="width:100%">
+            <body style="padding:1.5rem; background: transparent;">
+                <div style="display:flex; justify-content:center; align-items:center; margin-bottom:2rem;">
+                    <img src="https://i.ibb.co/xmtSkh6/calat-email.png" style="max-width:300px">
                 </div>
                 <p>{message_client}</p>
+                <div>
+                    <a href="https://www.facebook.com/CALAT-33-169199418110806" style='margin-right: 0.5rem;'>
+                        Facebook
+                    </a>
+                    <a href="https://www.instagram.com/calat33/" style='margin-right: 0.5rem;'>
+                        Instagram
+                    </a>
+                    <a href="https://twitter.com/hashtag/calat33">
+                        Twitter
+                    </a>
+                </div>
             </body>
         </html>
         """
