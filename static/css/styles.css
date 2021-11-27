@@ -4,7 +4,6 @@
   --second: #ffdcaf;
   --third: #fff8ef;
   --gradient: #0095d5;
-  --texture: url("https://www.transparenttextures.com/patterns/crossword.png");
 }
 
 .blue_palette {
@@ -17,9 +16,9 @@
 
 .dark_palette {
   --text: #fefefb;
-  --first: #b1b1b1;
+  --first: #e5a7f3;
   --second: #222;
-  --third: #444546;
+  --third: #202020;
   --gradient: #e5a7f3;
 }
 
@@ -34,6 +33,7 @@ html {
 }
 
 body {
+  background-image: url(https://www.transparenttextures.com/patterns/bedge-grunge.png);
   background-color: var(--third);
   touch-action: manipulation;
   display: flex;
@@ -85,7 +85,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--third);
+  background-color: var(--second);
   background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
   padding: 0.8rem 0rem;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16), 0 1px 6px rgba(0, 0, 0, 0.23);
@@ -112,13 +112,14 @@ p {
 
 .sidebar {
   display: none;
-  margin-top: 80px;
+  margin-top: 82px;
   width: 100%;
   position: fixed;
   right: 0;
   z-index: 1;
   flex-wrap: wrap;
   background-color: var(--third);
+  background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -200,12 +201,16 @@ p {
   opacity: 0.3;
 }
 
+#disabled:hover {
+  color: inherit;
+}
+
 .facebook {
   background-color: #3b5998;
 }
 
 .instagram {
-  background-image: linear-gradient(45deg, #FFDC80, #FCAF45, #F77737, #F56040, #FD1D1D, #E1306C, #C13584, #833AB4, #5B51D8, #405DE6);
+  background-image: linear-gradient(45deg, #FFDC80, #FCAF45, #F77737, #F56040, #FD1D1D, #E1306C, 13584, #833AB4, #5B51D8, #405DE6);
 }
 
 .social-container {
@@ -287,6 +292,10 @@ h2 {
   border-radius: 8px;
 }
 
+.form-desktop {
+  margin: 2rem 7%;
+}
+
 .form-input {
   width: 80%;
   border: none;
@@ -351,7 +360,7 @@ input[type=password]::placeholder {
 }
 
 .gradient-bkgd {
-  background-image: linear-gradient(180deg, var(--second), var(--gradient));
+  background-color: var(--second);
 }
 
 .none-bkgd {
@@ -440,11 +449,11 @@ label {
 }
 
 .first3 {
-  background: #b1b1b1;
+  background: #e5a7f3;
 }
 
 .second3 {
-  background: #444546;
+  background: #202020;
 }
 
 .third3 {
@@ -467,6 +476,7 @@ label {
   margin-top: -2.7rem;
   position: relative;
   background-color: var(--third);
+  background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
 }
 
 .first-body p {
@@ -809,6 +819,14 @@ label {
   .colabs .target-photo {
     height: 395px;
   }
+
+  .form-desktop {
+    margin: 2rem 20%;
+  }
+
+  .button-login-container button, .button-login-container a {
+    width: 50%;
+  }
 }
 @media screen and (min-width: 1024px) {
   .intro-image {
@@ -830,6 +848,39 @@ label {
   .fix-size-container {
     margin: 0rem 1rem 1rem 1rem;
   }
+
+  .form-desktop {
+    margin: 2rem 30%;
+  }
+
+  .button-login-container button, .button-login-container a {
+    width: 40%;
+  }
+
+  .sidebar-navigation {
+    flex-wrap: nowrap;
+    flex: 1 1 100%;
+    width: 100%;
+    align-items: center;
+  }
+
+  .sidebar a {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebar a:hover {
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .sidebar li {
+    transition: color 0.3s;
+  }
+
+  .sidebar li:hover {
+    color: var(--first);
+  }
 }
 @-moz-document url-prefix() {
   .second-body {
@@ -841,116 +892,5 @@ label {
     background: #1772b9;
   }
 }
-/*@media screen and (min-width: 1180px) {
-
-    .logo img {
-        filter: drop-shadow(#666666 -2px 2px 2px)
-    }
-
-    .content {
-        margin-top: 175px;
-    }
-
-    .content-desktop {
-        margin: 0;
-        display: block;
-        position: relative;
-        top: 86.5vh;
-
-    }
-
-    .logo {
-        width: 30%;
-        margin-left: 2rem;
-    }
-
-    .desktop-nav {
-        display: none;
-    }
-
-    .form-desktop {
-        margin-right: 25%;
-        margin-left : 25%;
-    }
-
-    .button {
-        width: 40%;
-    }
-
-    video {
-        width: 100%;
-        z-index: -1;
-        position: fixed;
-        top: 70px;
-    }
-
-    .slider {
-        box-shadow: -2px -1px 19px 11px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
-        margin-bottom: 500px;
-        background-color: var(--third);
-
-    }
-
-    #intro-title {
-        margin: 0;
-        background-color: var(--first);
-
-        text-align: center;
-        height: 13.5vh;
-        font-size: 8vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .period {
-        color: var(--text);
-    }
-
-    .padding-text {
-        padding: 2rem 10rem;
-    }
-
-    footer {
-        display: none;
-    }
-
-    .footer {
-        margin: 0;
-    }
-
-    .colabs-footer img {
-        width: 143px;
-    }
-
-    button {
-        font-weight: normal!important;
-    }
-
-    .desktop-nav {
-        display: flex;
-        flex-grow: 2;
-        justify-content: space-evenly;
-        margin: 0;
-        padding: 0;
-    }
-
-    .desktop-nav span {
-        margin-right: 0.5rem;
-        font-size: 1.3rem;
-    }
-
-    .desktop-nav a {
-        display: flex;
-        transition: font-weight 0.3s, letter-spacing 0.3s, color 0.6s;
-    }
-
-    .desktop-nav a:hover {
-        font-weight: 500;
-        letter-spacing: 0.1rem;
-        color: var(--first);
-    }
-
-}*/
 
 /*# sourceMappingURL=styles.css.map */
