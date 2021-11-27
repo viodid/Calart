@@ -64,7 +64,7 @@ def sendmail(receiver, message_client, subject, sender, password):
 
     html = f"""\
         <html>
-            <body style="padding:1.5rem; background: transparent;">
+            <body style="padding:1.5rem; background: transparent; font-size:1.1rem; font">
                 <div style="display:flex; justify-content:center; align-items:center; margin-bottom:2rem;">
                     <img src="https://i.ibb.co/xmtSkh6/calat-email.png" style="max-width:300px">
                 </div>
