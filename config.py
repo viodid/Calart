@@ -5,4 +5,6 @@ with open("/etc/config.json") as config_file:
 
 
 SECRET_KEY = config.get("SECRET_KEY")
-SQLALCHEMY_DATABASE_URI = config.get("SQLALCHEMY_DATABASE_URI")
+SENDER_EMAIL = config.get("SENDER_EMAIL")
+RECEIVER_EMAIL = config.get("RECEIVER_EMAIL")
+PASSWORD = config.get("PASSWORD")
