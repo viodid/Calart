@@ -182,6 +182,7 @@ def change():
             )
 
         if not checkPasswordhash(password[0]["hash"], last_password):
+
             return render_template(
                 "apology.html", top=400, bottom="contraseña_incorrecta"
             )
