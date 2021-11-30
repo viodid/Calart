@@ -490,18 +490,15 @@ label {
 }
 
 .line-span {
-  width: 0;
+  width: 100%;
   height: 4px;
   background: var(--first);
-  animation: line 4s infinite alternate;
+  animation: line 4s 2 alternate;
 }
 
 @keyframes line {
-  0% {
-    width: 0;
-  }
   100% {
-    width: 100%;
+    width: 0%;
   }
 }
 .paragraph0 {
