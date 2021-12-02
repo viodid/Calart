@@ -1,30 +1,20 @@
 from flask import Flask, render_template, request, redirect, session
-from flask_mobility import Mobility
-
 from cs50 import SQL
 from helpers import hash, checkPasswordhash, loginRequired, sendmail
 
 
 app = Flask(__name__)
-Mobility(app)
+
 
 app.config.from_pyfile("config.py")
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calart.db")
 
-mobile_devices = ["android", "iphone", "ipad", "windows phone"]
-user_agent = ""
 
 
 @app.route("/")
 def index():
-    # print(request.user_agent.platform)
-    # load diferent pages as diferent devices
-    # user_agent = request.user_agent.platform
-    # print(user_agent)
-    # if user_agent not in mobile_devices:
-    #    return render_template("desktop/index.html")
     return render_template("index.html")
 
 
