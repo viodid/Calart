@@ -2,9 +2,14 @@ from flask import Flask, render_template, request, redirect, session
 from cs50 import SQL
 from helpers import hash, checkPasswordhash, loginRequired, sendmail
 
+from flask_mail import Mail
+
 
 app = Flask(__name__)
 
+mail = Mail(app)
+
+mail.MAIL_USERNAME = "Viodid"
 
 app.config.from_pyfile("config.py")
 
@@ -12,9 +17,9 @@ app.config.from_pyfile("config.py")
 db = SQL("sqlite:///calart.db")
 
 
-
 @app.route("/")
 def index():
+    print(mail.MAIL_USERNAME)
     return render_template("index.html")
 
 
@@ -119,21 +124,24 @@ def register():
         rows = db.execute("SELECT * FROM users WHERE email = ?", email)
         session["user_id"] = rows[0]["id"]
         session["username"] = rows[0]["username"]
+
+        # https://pythonhosted.org/Flask-Mail/
+
         # send confirmation email
-        subject = "Bienvenido a Calat33🌱 🌎"
-        message = f"""\
-        ¡Bienvenid@ a bordo {username}!<br><br>
-        Gracias por registrarte en nuestra página web! De ahora en adelante irás reciviendo noticias sobre nuestras andadurías.<br>
-        Si no deseas recibir más correos, simplemente responde a cualquier email con la palabra baja.<br><br>
-        Nos emociona que quieras ser parte del cambio,<br><br>
-        El equipo de Calat33."""
-        sendmail(
-            email,
-            message,
-            subject,
-            app.config["SENDER_EMAIL"],
-            app.config["PASSWORD"],
-        )
+        # subject = "Bienvenido a Calat33🌱 🌎"
+        # message = f"""\
+        # ¡Bienvenid@ a bordo {username}!<br><br>
+        # Gracias por registrarte en nuestra página web! De ahora en adelante irás reciviendo noticias sobre nuestras andadurías.<br>
+        # Si no deseas recibir más correos, simplemente responde a cualquier email con la palabra baja.<br><br>
+        # Nos emociona que quieras ser parte del cambio,<br><br>
+        # El equipo de Calat33."""
+        # sendmail(
+        #     email,
+        #     message,
+        #     subject,
+        #     app.config["SENDER_EMAIL"],
+        #     app.config["PASSWORD"],
+        # )
         # Redirect user to home page
         return redirect("/profile")
 
