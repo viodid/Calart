@@ -38,6 +38,6 @@ Thumbs.db
 
 ######################
 /__pycache__
-=======
-Procfile
 dev_config.py
+Pipfile
+Pipfile.lock
