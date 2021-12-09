@@ -1,11 +1,13 @@
 # Flask Portfolio
 
-Calat33 is a web app implemented using Flask and bootstrap that works like a simple portfolio. The following functionalities have been added to the app.
+Calat33 is a web app implemented using Flask that involves an artist from the Basque Country (Spain) named Calat33.
+
+The following functionalities have been implemented in the app.
 
 - Register: Any person can register to make a new account.
 - Palette: Change and customize the colors palette of the web page.
 - Simple login, logout, register.
-- Mail newsletter, welcome mail and contact (email branch, not yet deployed).
+- Mail newsletter, welcome mail and contact.
 - Entirely in Spanish.
 - The webpage is mostly design for mobiles, but it's fully responsive.
 
