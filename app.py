@@ -130,7 +130,7 @@ def register():
         subject = "Bienvenido a Calat33🌱 🌎"
         message = f"""\
         ¡Bienvenid@ a bordo {username}!<br><br>
-        Gracias por registrarte en nuestra página web! De ahora en adelante irás reciviendo noticias sobre nuestras andadurías.<br>
+        Gracias por registrarte en nuestra página web! De ahora en adelante irás recibiendo noticias sobre nuestras andadurías.<br>
         Si no deseas recibir más correos, simplemente responde a cualquier email con la palabra baja.<br><br>
         Nos emociona que quieras ser parte del cambio,<br><br>
         El equipo de Calat33."""
