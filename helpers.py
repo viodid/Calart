@@ -49,9 +49,6 @@ def loginRequired(f):
     return wrapper
 
 
-def sendmail():
-    pass
-
 
 # https://pythonhosted.org/Flask-Mail/
 
