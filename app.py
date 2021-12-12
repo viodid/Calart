@@ -1,20 +1,26 @@
 from flask import Flask, render_template, request, redirect, session
 from cs50 import SQL
-from helpers import hash, checkPasswordhash, loginRequired, sendmail
+from helpers import hash, checkPasswordhash, loginRequired
+
+from flask_mail import Mail, Message
 
 
 app = Flask(__name__)
 
+mail = Mail(app)
+
 
 app.config.from_pyfile("config.py")
+
+mail = Mail(app)
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calart.db")
 
 
-
 @app.route("/")
 def index():
+    print(mail.MAIL_USERNAME)
     return render_template("index.html")
 
 
@@ -119,6 +125,7 @@ def register():
         rows = db.execute("SELECT * FROM users WHERE email = ?", email)
         session["user_id"] = rows[0]["id"]
         session["username"] = rows[0]["username"]
+
         # send confirmation email
         subject = "Bienvenido a Calat33🌱 🌎"
         message = f"""\
@@ -127,13 +134,8 @@ def register():
         Si no deseas recibir más correos, simplemente responde a cualquier email con la palabra baja.<br><br>
         Nos emociona que quieras ser parte del cambio,<br><br>
         El equipo de Calat33."""
-        sendmail(
-            email,
-            message,
-            subject,
-            app.config["SENDER_EMAIL"],
-            app.config["PASSWORD"],
-        )
+        sendmail(message, subject, [email])
+
         # Redirect user to home page
         return redirect("/profile")
 
@@ -216,13 +218,7 @@ def contact():
 
         subject = "Form Contact Page"
 
-        sendmail(
-            app.config["RECEIVER_EMAIL"],
-            message,
-            subject,
-            app.config["SENDER_EMAIL"],
-            app.config["PASSWORD"],
-        )
+        sendmail(message, subject, ["calat33@gmail.com"])
 
         return render_template("apology.html", top=200, bottom="Mensaje_Enviado!")
 
@@ -239,5 +235,32 @@ def artist():
     return render_template("artist.html")
 
 
+def sendmail(message_client, subject, recipients):
+    msg = Message(subject, recipients=recipients)
+    message = f"""\
+        <html>
+            <body style="padding:1.5rem; background: transparent; font-size:1.1rem; font">
+                <div style="display:flex; justify-content:center; align-items:center; margin-bottom:2rem;">
+                    <img src="https://i.ibb.co/xmtSkh6/calat-email.png" style="max-width:300px">
+                </div>
+                <p>{message_client}</p>
+                <div>
+                    <a href="https://www.facebook.com/CALAT-33-169199418110806" style='margin-right: 0.5rem;'>
+                        Facebook
+                    </a>
+                    <a href="https://www.instagram.com/calat33/" style='margin-right: 0.5rem;'>
+                        Instagram
+                    </a>
+                    <a href="https://twitter.com/hashtag/calat33">
+                        Twitter
+                    </a>
+                </div>
+            </body>
+        </html>
+        """
+    msg.html = message
+    mail.send(msg)
+
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, host="0.0.0.0", port=80)
