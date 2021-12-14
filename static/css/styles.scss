@@ -25,6 +25,7 @@ $dark_palette: (
     --second: #ffdcaf;
     --third: #fff8ef;
     --gradient: #0095d5;
+    --second-gradient: #1771b9;
 }
 
 .blue_palette {
@@ -33,6 +34,7 @@ $dark_palette: (
     --second: #4db5e2; 
     --third: #99d4ee;
     --gradient: #ee8d11;
+    --second-gradient: #bb7110;
 }
 
 .dark_palette {
@@ -41,6 +43,7 @@ $dark_palette: (
     --second: #222;
     --third: #202020;
     --gradient: #e5a7f3;
+    --second-gradient: #c748e4;
 }
 
 * {
@@ -65,6 +68,14 @@ body {
     justify-content: space-between;
     color: var(--text);
     min-height: 100vh;
+}
+
+h1 {
+    color: var(--second-gradient);
+}
+
+h2 {
+    color: var(--gradient);
 }
 
 li {
@@ -293,6 +304,7 @@ p {
 }
 
 .period {
+    display: none;
     color: var(--first);
 }
 
