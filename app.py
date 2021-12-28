@@ -230,6 +230,16 @@ def social():
     return render_template("social.html")
 
 
+@app.route("/talleres")
+def talleres():
+    return render_template("talleres.html")
+
+
+@app.route("/colaboraciones")
+def colaboraciones():
+    return render_template("colaboraciones.html")
+
+
 @app.route("/artist")
 def artist():
     return render_template("artist.html")

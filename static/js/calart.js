@@ -27,6 +27,10 @@ function listen() {
         document.getElementById("blue").addEventListener("click", function (event) { toggleValue(event); });
         document.getElementById("dark").addEventListener("click", function (event) { toggleValue(event); });
     }
+
+    document.getElementById("socialchild").addEventListener("click", function () {
+
+    })
 }
 
 function displayNavbar() {
@@ -46,7 +50,6 @@ function removeNavbar() {
             displaySideBar = true;
             displayNavbar();
         });
-
 }
 
 function togglePassword() {

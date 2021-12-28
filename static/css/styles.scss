@@ -815,6 +815,10 @@ label {
     color: revert;
 }
 
+.body-footer a:hover {
+    text-decoration: underline;
+}
+
 .child-body-footer {
     margin: 0 1.5rem;
 }
