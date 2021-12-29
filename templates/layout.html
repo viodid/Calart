@@ -51,16 +51,19 @@
                 <li id='disabled'><a><span>Productos y Servicios</span><img
                             src="https://icongr.am/material/book-open-variant.svg?size=25&color=333333"></a>
                 </li>
-                <!--<li><a href="#"><span>Servicios</span><img
-                            src="https://icongr.am/material/earth-box.svg?size=25&color=333333"></a></li>-->
-                <li><a href="/social"><span>Social y Medio Ambiente</span><img
-                            src="https://icongr.am/material/cards-heart.svg?size=25&color=333333"></a></li>
-                <!-- ##########  
-                <li><a href="/talleres" id="socialchild"
-                        style="background-color: var(--first); padding-right: 1rem; opacity:0.5"><span>Talleres
-                        </span></a></li>
-                <li><a href="/colaboraciones" id="socialchild"><span>Colaboraciones </span></a></li>
-                ##########  -->
+                <li><a id="dropdown"><span>
+                            &#9660; Social y Medio Ambiente</span><img
+                            src="https://icongr.am/material/cards-heart.svg?size=25&color=333333"></a>
+
+                    <ul class="dropdown-items" style="padding: 0;">
+                        <li style="margin-bottom: 0;"><a href="/talleres"
+                                style="background-color: var(--second); border-top:1px solid black;"><span>Talleres
+                                </span></a></li>
+                        <li><a href="/colaboraciones"
+                                style="background-color: var(--second); border-bottom:1px solid black; border-top:1px solid black;"><span>Colaboraciones
+                                </span></a></li>
+                    </ul>
+                </li>
                 <li><a href="/contact"><span>Contacto</span><img
                             src="https://icongr.am/material/email.svg?size=25&color=333333"></a></li>
                 {% if session.username %}

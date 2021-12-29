@@ -1,5 +1,6 @@
 let degrees = 180;
 let displaySideBar = false;
+let dropdown = false;
 const properties = ["--text", "--first", "--second", "--third", "--gradient"];
 const values = [["#222", "#ee8d11", "#ffdcaf", "#fff0dd", "#0095d5"],
 ["#222", "#1772b9", "#4db5e2", "#99d4ee", "#ee8d11"], ["#fefefb", "#b1b1b1", "#222", "#444546", "#6c317a"]];
@@ -28,8 +29,8 @@ function listen() {
         document.getElementById("dark").addEventListener("click", function (event) { toggleValue(event); });
     }
 
-    document.getElementById("socialchild").addEventListener("click", function () {
-
+    document.getElementById("dropdown").addEventListener("click", function () {
+        displayDropdown();
     })
 }
 
@@ -37,19 +38,20 @@ function displayNavbar() {
     if (!displaySideBar) {
         document.querySelector(".sidebar").classList.add("show");
         displaySideBar = true;
-        removeNavbar();
     } else {
         document.querySelector(".sidebar").classList.remove("show");
         displaySideBar = false;
     }
 }
 
-function removeNavbar() {
-    document.querySelector("body > div:not(.sidebar)")
-        .addEventListener("click", function () {
-            displaySideBar = true;
-            displayNavbar();
-        });
+function displayDropdown() {
+    if (!dropdown) {
+        document.querySelector(".dropdown-items").classList.add("show-dropdown");
+        dropdown = true;
+    } else {
+        document.querySelector(".dropdown-items").classList.remove("show-dropdown");
+        dropdown = false;
+    }
 }
 
 function togglePassword() {
