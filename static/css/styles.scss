@@ -274,7 +274,7 @@ p {
     margin: 0 2rem;
 }
 
-.colabs img {
+.colabs img, .colabs video {
     width: 100%;
     margin-bottom: 2rem;
     border-radius: 10px;
@@ -880,7 +880,7 @@ label {
     .intro-image {
         max-height: 621px;
         object-fit: cover;
-        object-position: 0 95%;
+        object-position: 0 65%;
     }
 
     .first-body {
