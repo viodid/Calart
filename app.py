@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, session
 from cs50 import SQL
 from helpers import hash, checkPasswordhash, loginRequired
+from datetime import date
 
 from flask_mail import Mail, Message
 
@@ -17,10 +18,12 @@ mail = Mail(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calart.db")
 
+current_date = date.today()
+current_year = current_date.year
 
 @app.route("/")
 def index():
-    print(mail.MAIL_USERNAME)
+    session["year"] = current_year
     return render_template("index.html")
 
 
