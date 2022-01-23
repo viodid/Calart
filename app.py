@@ -21,6 +21,7 @@ db = SQL("sqlite:///calart.db")
 current_date = date.today()
 current_year = current_date.year
 
+
 @app.route("/")
 def index():
     session["year"] = current_year

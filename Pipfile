@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+cs50 = "==7.0.2"
+Flask = "==2.0.2"
+Flask-Session = "==0.4.0"
+Jinja2 = "==3.0.2"
+SQLAlchemy = "==1.4.25"
+Werkzeug = "==2.0.2"
+flask-mail = "*"
+
+[dev-packages]
+black = "*"
+
+[requires]
+python_version = "3.10"
+
+[pipenv]
+allow_prereleases = true
