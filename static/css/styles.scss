@@ -124,7 +124,7 @@ p {
     background-color: var(--second);
     background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
     padding: 0.8rem 0rem;
-    box-shadow: 0 1px 1px rgb(0 0 0 / 16%), 0 1px 6px rgb(0 0 0 / 23%);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 16%), 0 1px 6px rgba(0, 0, 0, 23%);
     position: fixed;
     z-index: 2;
 }

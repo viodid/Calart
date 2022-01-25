@@ -8,3 +8,4 @@ ip.py
 *.db
 *.css
 *.map
+.sass-cache/
