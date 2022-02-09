@@ -23,7 +23,7 @@ $dark_palette: (
     --text: #222;
     --first: #ee8d11;
     --second: #ffdcaf;
-    --third: #fff8ef;
+    --third: #fff;
     --gradient: #0095d5;
     --second-gradient: #1771b9;
 }
@@ -259,8 +259,11 @@ p {
 
 
 .social-container {
-    margin: 0 2rem;
+    margin: auto 1.5rem;
     font-size: 1.1rem;
+    max-width: 900px;
+    display: flex;
+    flex-flow: column;
 }
 
 .colabs {
@@ -502,11 +505,14 @@ label {
 .intro-image {
     width: 100%;
     height: auto;
+    border-bottom: 5px solid var(--first);
 }
 
 .first-body {
     margin: 0 1rem;
     margin-top: -2.7rem;
+    border-top: 5px solid var(--first);
+    border-radius: 10px;
     position: relative;
     background-color: var(--third);
     background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
@@ -940,13 +946,41 @@ label {
     }
 
     .container-artist {
-        max-width: 600px;
+        max-width: 900px;
     }
 
     .tex-pages-container {
         display: flex;
         justify-content: center;
     }
+
+    .social-container {
+        margin: auto;
+    }
+
+    .movida-intro-margen {
+        position: absolute;
+        bottom: 58%;
+        top: 0;
+        border: 3.5px solid var(--first);
+    }
+
+    .movida-intro-margen {
+        position: absolute;
+        bottom: 58%;
+        top: 0;
+        right: 99.2%;
+        border: 3.5px solid var(--first);
+    }
+
+    .right {
+        right: 99.2%;
+    }
+
+    .left {
+        left: 99.2%;
+    }
+
 }
 
 
