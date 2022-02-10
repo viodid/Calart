@@ -138,7 +138,7 @@ def register():
         Si no deseas recibir más correos, simplemente responde a cualquier email con la palabra baja.<br><br>
         Nos emociona que quieras ser parte del cambio,<br><br>
         El equipo de Calat33."""
-        sendmail(message, subject, [email])
+        # sendmail(message, subject, [email])
 
         # Redirect user to home page
         return redirect("/profile")
