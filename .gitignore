@@ -6,6 +6,5 @@ Pipfile.lock
 /venv
 ip.py
 *.db
-*.css
 *.map
 .sass-cache/
