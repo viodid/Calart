@@ -27,7 +27,7 @@ https://user-images.githubusercontent.com/56805021/143233922-6c6ad669-9ce9-4775-
 * Python
 * Flask
 * SQLite3
-(Other dependancies can be found out in te requirements.txt file)
+(Other dependencies can be found in the requirements.txt)
 
 ## Installation
 
